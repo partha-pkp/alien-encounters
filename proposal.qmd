@@ -1,6 +1,6 @@
 ---
-title: "Alien Encounters"
-subtitle: "Visualizing UFO Sightings"
+title: "Proposal title"
+subtitle: "Proposal"
 format: html
 editor: visual
 ---
@@ -16,17 +16,6 @@ library(tidyverse)
 ```{r}
 #| label: load-dataset
 #| message: false
-#| Loading the Dataset 
-#| UFO_Sighting - 
-
-ufo <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/ufo_sightings.csv")
-ufo
-
-#| Places - 
-
-places <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/places.csv")
-places
-
 ```
 
 A brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.
