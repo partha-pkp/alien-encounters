@@ -12,6 +12,7 @@ library(tidyverse)
 ```
 
 # Dataset
+
 ```{r, echo=FALSE}
 #| label: load-dataset
 #| message: false
@@ -34,20 +35,20 @@ With its multifaceted elements and global scope, it provides a comprehensive vie
 UFO sightings are associated with unexplained aerial phenomena, making them a subject of enduring fascination. Researchers and enthusiasts are drawn to these sightings due to the mystery surrounding them, and they seek to uncover potential patterns or explanations. Our team discovered a shared interest in mysterious and scientifically curious occurrences, therefore we chose this dataset.
 
 # Questions
+
 Q1. What are the UFO sighting dates and locations globally?
 
 Q2. How did the trend of UFO sightings vary over years?
 
 # Analysis plan
-## Question 1
 
+## Question 1
 
 To answer "What are the UFO sighting dates and locations globally?", initially the dataset has to be loaded from the "TidyTuesday" source using the `read.csv` function in R. The date and location columns have to be verified to ensure that they are in the correct data types. The structure and content of the dataset has to be understood clearly. The unique values and frequency distributions of key variables, particularly `reported_date_time`, `city`, `state`, `country_code`, and `day_part` have to be studied. Relevant date and location information from the dataset, which includes `reported_date_time`, `city`, `state`, `country_code`, and potentially `day_part` has to be extracted. Depending on the analysis, data by day, month, or year can be aggregated to examine the trends . To visualize the global distribution of UFO sightings, a geographical plot can be drawn. Bubble maps can be plotted making use of the `longitude` and `latitude` information of the values `city`, `state`, and `country_code` variables.\
 
 Time series plots can be added to display the temporal distribution of UFO sightings. Monthly or yearly counts can be plotted depending on the preference. For a more informative visualization, line charts or bar charts can be used depending on the granularity of the time period. Based on the depth of analysis, additional variables such as `shape` or `duration_seconds` can be incorporated to explore correlations between sighting characteristics and dates/locations. Then, the plots have to be customized with appropriate labels, titles, legends, and color schemes to enhance clarity and readability. The generated visualizations have to be analyzed for any notable patterns, clusters, or trends in UFO sightings over time and across locations to draw insights from the data.
 
 ## Question 2
-
 
 To answer "How did the trend of UFO sightings vary over years?", start by making inferences from the previously generated plots in question 1.A new column has to be created to extract the year from the `reported_date_time` or `reported_date_time_utc` column. This will allow to group sightings by year. Count the number of sightings for each year by grouping the data by the extracted year. This will provide you with the annual total of UFO sightings. For instance, the `geom_treemap` can be used to visualize the timings of sighting for particular year.\
 

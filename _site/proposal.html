@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project Title - Proposal title</title>
+<title>Project Title - Alien Encounters</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -89,8 +55,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -155,7 +120,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#dataset" id="toc-dataset" class="nav-link active" data-scroll-target="#dataset">Dataset</a></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li><a href="#analysis-plan" id="toc-analysis-plan" class="nav-link" data-scroll-target="#analysis-plan">Analysis plan</a></li>
+  <li><a href="#analysis-plan" id="toc-analysis-plan" class="nav-link" data-scroll-target="#analysis-plan">Analysis plan</a>
+  <ul class="collapse">
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -164,8 +133,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Proposal title</h1>
-<p class="subtitle lead">Proposal</p>
+<h1 class="title">Alien Encounters</h1>
+<p class="subtitle lead">Visualizing UFO Sightings</p>
 </div>
 
 
@@ -180,25 +149,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="dataset" class="level2">
-<h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
-<p>A brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.</p>
-<p>Make sure to load the data and use inline code for some of this information.</p>
+<section id="dataset" class="level1">
+<h1>Dataset</h1>
+<p>The UFO sightings dataset is a rich collection of reports documenting encounters with unidentified flying objects (UFOs). Comprising diverse attributes, it offers valuable insights into these unexplained phenomena. This dataset has been sourced from the TidyTuesday project, a popular platform within the data science community, known for its weekly data visualization and data cleaning challenges. It was released as part of the TidyTuesday challenge on June 20, 2023.</p>
+<p>With its multifaceted elements and global scope, it provides a comprehensive view of these unexplained phenomena. As we delve deeper into the data, we can uncover patterns, correlations, and insights that may shed light on the intriguing world of UFO sightings, offering both scientific and anecdotal perspectives on these enigmatic events. To provide an overview of the phenomenon, we have selected the <code>ufo_sighting.csv</code> and <code>places.csv</code> files from the provided dataset, each of which contains 96429 observations of 12 variables and 14417 instances of variables, respectively.</p>
+<p>UFO sightings are associated with unexplained aerial phenomena, making them a subject of enduring fascination. Researchers and enthusiasts are drawn to these sightings due to the mystery surrounding them, and they seek to uncover potential patterns or explanations. Our team discovered a shared interest in mysterious and scientifically curious occurrences, therefore we chose this dataset.</p>
 </section>
-<section id="questions" class="level2">
-<h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>The two questions you want to answer.</p>
+<section id="questions" class="level1">
+<h1>Questions</h1>
+<p>Q1. What are the UFO sighting dates and locations globally?</p>
+<p>Q2. How did the trend of UFO sightings vary over years?</p>
 </section>
-<section id="analysis-plan" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-plan">Analysis plan</h2>
-<ul>
-<li>A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).</li>
-</ul>
+<section id="analysis-plan" class="level1">
+<h1>Analysis plan</h1>
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<p>To answer “What are the UFO sighting dates and locations globally?”, initially the dataset has to be loaded from the “TidyTuesday” source using the <code>read.csv</code> function in R. The date and location columns have to be verified to ensure that they are in the correct data types. The structure and content of the dataset has to be understood clearly. The unique values and frequency distributions of key variables, particularly <code>reported_date_time</code>, <code>city</code>, <code>state</code>, <code>country_code</code>, and <code>day_part</code> have to be studied. Relevant date and location information from the dataset, which includes <code>reported_date_time</code>, <code>city</code>, <code>state</code>, <code>country_code</code>, and potentially <code>day_part</code> has to be extracted. Depending on the analysis, data by day, month, or year can be aggregated to examine the trends . To visualize the global distribution of UFO sightings, a geographical plot can be drawn. Bubble maps can be plotted making use of the <code>longitude</code> and <code>latitude</code> information of the values <code>city</code>, <code>state</code>, and <code>country_code</code> variables.<br>
+</p>
+<p>Time series plots can be added to display the temporal distribution of UFO sightings. Monthly or yearly counts can be plotted depending on the preference. For a more informative visualization, line charts or bar charts can be used depending on the granularity of the time period. Based on the depth of analysis, additional variables such as <code>shape</code> or <code>duration_seconds</code> can be incorporated to explore correlations between sighting characteristics and dates/locations. Then, the plots have to be customized with appropriate labels, titles, legends, and color schemes to enhance clarity and readability. The generated visualizations have to be analyzed for any notable patterns, clusters, or trends in UFO sightings over time and across locations to draw insights from the data.</p>
+</section>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p>To answer “How did the trend of UFO sightings vary over years?”, start by making inferences from the previously generated plots in question 1.A new column has to be created to extract the year from the <code>reported_date_time</code> or <code>reported_date_time_utc</code> column. This will allow to group sightings by year. Count the number of sightings for each year by grouping the data by the extracted year. This will provide you with the annual total of UFO sightings. For instance, the <code>geom_treemap</code> can be used to visualize the timings of sighting for particular year.<br>
+</p>
+<p>To show the trend of UFO sightings over the years, a line plot (<code>geom_line</code>) or a bar plot (<code>geom_bar</code>) can be suitable. We can use density plot (<code>geom_density</code>) or histogram (<code>geom_histogram</code>) to see at which part of the day the sighting has happened. This type of visualization can provide insights into the diurnal patterns of UFO sightings and helps in understanding if there are any specific times of day when sightings are more frequent. Additional aesthetics, such as color or shape can be added to represent any other variables.<br>
+</p>
+<p>Finally, the resulting plots can be used to analyze how UFO sightings have changed over time, showing the pattern visually.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
