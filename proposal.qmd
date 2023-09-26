@@ -2,10 +2,11 @@
 title: "Alien Encounters"
 subtitle: "Visualizing UFO Sightings"
 format: html
+code-fold: true
 editor: visual
 ---
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results='hide'}
 #| label: load-pkgs
 #| message: false
 library(tidyverse)
@@ -13,7 +14,7 @@ library(tidyverse)
 
 # Dataset
 
-```{r, echo=FALSE}
+```{r, echo=TRUE, results='hide'}
 #| label: load-dataset
 #| message: false
 
@@ -28,7 +29,7 @@ places <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesda
 
 ```
 
-The UFO sightings dataset is a rich collection of reports documenting encounters with unidentified flying objects (UFOs). Comprising diverse attributes, it offers valuable insights into these unexplained phenomena. This dataset has been sourced from the TidyTuesday project, a popular platform within the data science community, known for its weekly data visualization and data cleaning challenges. It was released as part of the TidyTuesday challenge on June 20, 2023.
+The [UFO sightings Dataset](https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-06-20) is a rich collection of reports documenting encounters with unidentified flying objects (UFOs). Comprising diverse attributes, it offers valuable insights into these unexplained phenomena. This dataset has been sourced from the TidyTuesday project, a popular platform within the data science community, known for its weekly data visualization and data cleaning challenges. It was released as part of the TidyTuesday challenge on June 20, 2023.
 
 With its multifaceted elements and global scope, it provides a comprehensive view of these unexplained phenomena. As we delve deeper into the data, we can uncover patterns, correlations, and insights that may shed light on the intriguing world of UFO sightings, offering both scientific and anecdotal perspectives on these enigmatic events. To provide an overview of the phenomenon, we have selected the `ufo_sighting.csv` and `places.csv` files from the provided dataset, each of which contains 96429 observations of 12 variables and 14417 instances of variables, respectively.
 
@@ -36,7 +37,7 @@ UFO sightings are associated with unexplained aerial phenomena, making them a su
 
 # Questions
 
-Q1. What are the UFO sighting dates and locations globally?
+Q1. What are the UFO sighting years and locations globally?
 
 Q2. How did the trend of UFO sightings vary over years?
 
@@ -44,7 +45,7 @@ Q2. How did the trend of UFO sightings vary over years?
 
 ## Question 1
 
-To answer "What are the UFO sighting dates and locations globally?", initially the dataset has to be loaded from the "TidyTuesday" source using the `read.csv` function in R. The date and location columns have to be verified to ensure that they are in the correct data types. The structure and content of the dataset has to be understood clearly. The unique values and frequency distributions of key variables, particularly `reported_date_time`, `city`, `state`, `country_code`, and `day_part` have to be studied. Relevant date and location information from the dataset, which includes `reported_date_time`, `city`, `state`, `country_code`, and potentially `day_part` has to be extracted. Depending on the analysis, data by day, month, or year can be aggregated to examine the trends . To visualize the global distribution of UFO sightings, a geographical plot can be drawn. Bubble maps can be plotted making use of the `longitude` and `latitude` information of the values `city`, `state`, and `country_code` variables.\
+To answer "What are the UFO sighting years and locations globally?", initially the dataset has to be loaded from the "TidyTuesday" source using the `read.csv` function in R. The date and location columns have to be verified to ensure that they are in the correct data types. The structure and content of the dataset has to be understood clearly. The unique values and frequency distributions of key variables, particularly `reported_date_time`, `city`, `state`, `country_code`, and `day_part` have to be studied. Relevant date and location information from the dataset, which includes `reported_date_time`, `city`, `state`, `country_code`, and potentially `day_part` has to be extracted. Depending on the analysis, data by day, month, or year can be aggregated to examine the trends . To visualize the global distribution of UFO sightings, a geographical plot can be drawn. Bubble maps can be plotted making use of the `longitude` and `latitude` information of the values `city`, `state`, and `country_code` variables.\
 
 Time series plots can be added to display the temporal distribution of UFO sightings. Monthly or yearly counts can be plotted depending on the preference. For a more informative visualization, line charts or bar charts can be used depending on the granularity of the time period. Based on the depth of analysis, additional variables such as `shape` or `duration_seconds` can be incorporated to explore correlations between sighting characteristics and dates/locations. Then, the plots have to be customized with appropriate labels, titles, legends, and color schemes to enhance clarity and readability. The generated visualizations have to be analyzed for any notable patterns, clusters, or trends in UFO sightings over time and across locations to draw insights from the data.
 
