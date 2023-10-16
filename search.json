@@ -1,128 +1,107 @@
 [
   {
-    "objectID": "presentation.html#quarto",
-    "href": "presentation.html#quarto",
-    "title": "Project title",
-    "section": "Quarto",
-    "text": "Quarto\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
-  },
-  {
-    "objectID": "presentation.html#layouts",
-    "href": "presentation.html#layouts",
-    "title": "Project title",
-    "section": "Layouts",
-    "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
-  },
-  {
-    "objectID": "presentation.html#code",
-    "href": "presentation.html#code",
-    "title": "Project title",
-    "section": "Code",
-    "text": "Code\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
-  },
-  {
-    "objectID": "presentation.html#plots",
-    "href": "presentation.html#plots",
-    "title": "Project title",
-    "section": "Plots",
-    "text": "Plots"
-  },
-  {
-    "objectID": "presentation.html#plot-and-text",
-    "href": "presentation.html#plot-and-text",
-    "title": "Project title",
-    "section": "Plot and text",
-    "text": "Plot and text\n\n\n\nSome text\ngoes here"
-  },
-  {
-    "objectID": "presentation.html#tables",
-    "href": "presentation.html#tables",
-    "title": "Project title",
-    "section": "Tables",
-    "text": "Tables\nIf you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\n\n\n\n\nAdelie\nTorgersen\n39.1\n18.7\n181\n3750\nmale\n\n\nAdelie\nTorgersen\n39.5\n17.4\n186\n3800\nfemale\n\n\nAdelie\nTorgersen\n40.3\n18.0\n195\n3250\nfemale\n\n\nAdelie\nTorgersen\nNA\nNA\nNA\nNA\nNA\n\n\nAdelie\nTorgersen\n36.7\n19.3\n193\n3450\nfemale\n\n\nAdelie\nTorgersen\n39.3\n20.6\n190\n3650\nmale"
-  },
-  {
-    "objectID": "presentation.html#images",
-    "href": "presentation.html#images",
-    "title": "Project title",
-    "section": "Images",
-    "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
-  },
-  {
-    "objectID": "presentation.html#math-expressions",
-    "href": "presentation.html#math-expressions",
-    "title": "Project title",
-    "section": "Math Expressions",
-    "text": "Math Expressions\nYou can write LaTeX math expressions inside a pair of dollar signs, e.g. $\\alpha+\\beta$ renders \\(\\alpha + \\beta\\). You can use the display style with double dollar signs:\n$$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$$\n\\[\n\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\n\\]\nLimitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
-  },
-  {
-    "objectID": "presentation.html#feeling-adventurous",
-    "href": "presentation.html#feeling-adventurous",
-    "title": "Project title",
-    "section": "Feeling adventurous?",
-    "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that's what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Project title",
-    "section": "",
-    "text": "Add project abstract here."
-  },
-  {
-    "objectID": "index.html#abstract",
-    "href": "index.html#abstract",
-    "title": "Project title",
-    "section": "",
-    "text": "Add project abstract here."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This project was developed by [Team Name] For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nTeam member 1: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.)."
-  },
-  {
     "objectID": "proposal.html",
     "href": "proposal.html",
     "title": "Alien Encounters",
     "section": "",
-    "text": "The UFO sightings dataset is a rich collection of reports documenting encounters with unidentified flying objects (UFOs). Comprising diverse attributes, it offers valuable insights into these unexplained phenomena. This dataset has been sourced from the TidyTuesday project, a popular platform within the data science community, known for its weekly data visualization and data cleaning challenges. It was released as part of the TidyTuesday challenge on June 20, 2023.\nWith its multifaceted elements and global scope, it provides a comprehensive view of these unexplained phenomena. As we delve deeper into the data, we can uncover patterns, correlations, and insights that may shed light on the intriguing world of UFO sightings, offering both scientific and anecdotal perspectives on these enigmatic events. To provide an overview of the phenomenon, we have selected the ufo_sighting.csv and places.csv files from the provided dataset, each of which contains 96429 observations of 12 variables and 14417 instances of variables, respectively.\nUFO sightings are associated with unexplained aerial phenomena, making them a subject of enduring fascination. Researchers and enthusiasts are drawn to these sightings due to the mystery surrounding them, and they seek to uncover potential patterns or explanations. Our team discovered a shared interest in mysterious and scientifically curious occurrences, therefore we chose this dataset."
+    "text": "Code\n#&gt; Loading the Dataset \n#&gt; UFO_Sighting - \n\nufo &lt;- read.csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/ufo_sightings.csv\")\n\n#&gt; Places - \n\nplaces &lt;- read.csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/places.csv\")\n\n\nThe UFO sightings Dataset is a rich collection of reports documenting encounters with unidentified flying objects (UFOs). Comprising diverse attributes, it offers valuable insights into these unexplained phenomena. This dataset has been sourced from the TidyTuesday project, a popular platform within the data science community, known for its weekly data visualization and data cleaning challenges. It was released as part of the TidyTuesday challenge on June 20, 2023.\nWith its multifaceted elements and global scope, it provides a comprehensive view of these unexplained phenomena. As we delve deeper into the data, we can uncover patterns, correlations, and insights that may shed light on the intriguing world of UFO sightings, offering both scientific and anecdotal perspectives on these enigmatic events. To provide an overview of the phenomenon, we have selected the ufo_sighting.csv and places.csv files from the provided dataset, each of which contains 96429 observations of 12 variables and 14417 instances of variables, respectively.\nUFO sightings are associated with unexplained aerial phenomena, making them a subject of enduring fascination. Researchers and enthusiasts are drawn to these sightings due to the mystery surrounding them, and they seek to uncover potential patterns or explanations. Our team discovered a shared interest in mysterious and scientifically curious occurrences, therefore we chose this dataset.\nThe following key variables were considered to develop the proposed analysis plan.\n\n\n\n\n\n\n\n\nVariable\nClass\nDescription\n\n\n\n\nreported_date_time\ndatetime\nThe time and date of the sighting, as it appears in the original NUFORC data.\n\n\nreported_date_time_utc\ndatetime\nThe time and date of the sighting, normalized to UTC.\n\n\ncity\ncharacter\nThe city of the sighting.\n\n\nstate\ncharacter\nThe state, province, or similar division of the sighting.\n\n\ncountry_code\ncharacter\nThe 2-letter country code of the sighting, normalized from the original data.\n\n\nday_part\ncharacter\nThe approximate part of the day in which the sighting took place such as “nautical twilight”, “sunrise”, and “sunset.”\n\n\nlatitude\ndouble\nThe latitude for this city, from geonames.org.\n\n\nlongitude\ndouble\nThe longitude for this city, from geonames.org.\n\n\nshape\ncharacter\nThe reported shape of the craft.\n\n\nduration_seconds\ndouble\nThe duration normalized to seconds."
   },
   {
     "objectID": "proposal.html#question-1",
     "href": "proposal.html#question-1",
     "title": "Alien Encounters",
     "section": "Question 1",
-    "text": "Question 1\nTo answer “What are the UFO sighting dates and locations globally?”, initially the dataset has to be loaded from the “TidyTuesday” source using the read.csv function in R. The date and location columns have to be verified to ensure that they are in the correct data types. The structure and content of the dataset has to be understood clearly. The unique values and frequency distributions of key variables, particularly reported_date_time, city, state, country_code, and day_part have to be studied. Relevant date and location information from the dataset, which includes reported_date_time, city, state, country_code, and potentially day_part has to be extracted. Depending on the analysis, data by day, month, or year can be aggregated to examine the trends . To visualize the global distribution of UFO sightings, a geographical plot can be drawn. Bubble maps can be plotted making use of the longitude and latitude information of the values city, state, and country_code variables.\n\nTime series plots can be added to display the temporal distribution of UFO sightings. Monthly or yearly counts can be plotted depending on the preference. For a more informative visualization, line charts or bar charts can be used depending on the granularity of the time period. Based on the depth of analysis, additional variables such as shape or duration_seconds can be incorporated to explore correlations between sighting characteristics and dates/locations. Then, the plots have to be customized with appropriate labels, titles, legends, and color schemes to enhance clarity and readability. The generated visualizations have to be analyzed for any notable patterns, clusters, or trends in UFO sightings over time and across locations to draw insights from the data."
+    "text": "Question 1\nTo answer “What are the UFO sighting years and locations globally?”, initially the dataset has to be loaded from the “TidyTuesday” source using the read.csv function in R. The date and location columns have to be verified to ensure that they are in the correct data types. The structure and content of the dataset has to be understood clearly. The unique values and frequency distributions of key variables, particularly reported_date_time, city, state, country_code, and day_part have to be studied. Relevant date and location information from the dataset, which includes reported_date_time, city, state, country_code, and potentially day_part has to be extracted. Depending on the analysis, data by day, month, or year can be aggregated to examine the trends . To visualize the global distribution of UFO sightings, a geographical plot can be drawn. Bubble maps can be plotted making use of the longitude and latitude information of the values city, state, and country_code variables. Bubble maps can simultaneously display both the geographical locations of UFO sightings and how their frequency has changed over time. Each bubble could represent a specific location, and the size or color of the bubble can be used to encode the number of sightings in a particular year.\n\nA geom_treemap can be used to hierarchically visualize the number of sightings depending on the geographical locations. This can be done by grouping the countries into respective continents. Then, the plots have to be customized with appropriate labels, titles, legends, and color schemes to enhance clarity and readability. The generated visualizations have to be analyzed for any notable patterns, clusters, or trends in UFO sightings over time and across locations to draw insights from the data."
   },
   {
     "objectID": "proposal.html#question-2",
     "href": "proposal.html#question-2",
     "title": "Alien Encounters",
     "section": "Question 2",
-    "text": "Question 2\nTo answer “How did the trend of UFO sightings vary over years?”, start by making inferences from the previously generated plots in question 1.A new column has to be created to extract the year from the reported_date_time or reported_date_time_utc column. This will allow to group sightings by year. Count the number of sightings for each year by grouping the data by the extracted year. This will provide you with the annual total of UFO sightings. For instance, the geom_treemap can be used to visualize the timings of sighting for particular year.\n\nTo show the trend of UFO sightings over the years, a line plot (geom_line) or a bar plot (geom_bar) can be suitable. We can use density plot (geom_density) or histogram (geom_histogram) to see at which part of the day the sighting has happened. This type of visualization can provide insights into the diurnal patterns of UFO sightings and helps in understanding if there are any specific times of day when sightings are more frequent. Additional aesthetics, such as color or shape can be added to represent any other variables.\n\nFinally, the resulting plots can be used to analyze how UFO sightings have changed over time, showing the pattern visually."
+    "text": "Question 2\nTo answer “How did the trend of UFO sightings vary over years?”, start by making inferences from the previously generated plots in question 1. A new column has to be created to extract the year from the reported_date_time or reported_date_time_utc column. This will allow to group sightings by year. Count the number of sightings for each year by grouping the data by the extracted year. This will provide you with the annual total of UFO sightings.\n\nTo show the trend of UFO sightings over the years, a time series plot (geom_line) can be used. They will be helpful in understanding the temporal distribution of UFO sightings. Monthly or yearly counts can be plotted depending on the preference. For a more informative visualization, line charts can be used depending on the granularity of the time period. Based on the depth of analysis, additional variables such as shape or duration_seconds can be incorporated to explore correlations between sighting characteristics and dates/locations.\n\nWe can use density plot (geom_density) or histogram (geom_histogram) to see at which part of the day the sighting has happened. This type of visualization can provide insights into the diurnal patterns of UFO sightings and helps in understanding if there are any specific times of day when sightings are more frequent. Additional aesthetics, such as color or shape can be added to represent any other variables.\n\nFinally, the resulting plots can be used to analyze how UFO sightings have changed over time, showing the pattern visually."
   },
   {
-    "objectID": "data/README 2.html",
-    "href": "data/README 2.html",
-    "title": "Data",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Alien Encounters 🛸",
     "section": "",
-    "text": "[Dataset]: Description of the dataset"
+    "text": "The present work delves into the fascinating world of UFO sightings, leveraging a comprehensive dataset featuring details on reported encounters with unidentified flying objects. Sourced from the TidyTuesday project, this dataset compiles UFO sighting reports spanning different times, locations, and attributes. The analysis focuses on uncovering intriguing insights into the patterns and characteristics of UFO sightings. The report commences by offering a concise dataset description, emphasizing its provenance and dimensions.\nThe project explores the temporal aspect of UFO sightings, tracking trends over the years. An in-depth look into diurnal patterns during particular years adds to the comprehensive examination. Ultimately, this report serves as an entry point into the world of UFO sightings, offering data enthusiasts, researchers, and the general public an opportunity to unravel the mysteries of these unexplained phenomena. Its focus on data-driven analysis and visualization provides a foundation for ongoing investigations into the extraordinary and enigmatic realm of UFO encounters."
   },
   {
-    "objectID": "data/README 2.html#variable-names-and-descriptions",
-    "href": "data/README 2.html#variable-names-and-descriptions",
-    "title": "Data",
-    "section": "Variable Names and Descriptions:",
-    "text": "Variable Names and Descriptions:\n\nvariable: Description"
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "Alien Encounters 🛸",
+    "section": "",
+    "text": "The present work delves into the fascinating world of UFO sightings, leveraging a comprehensive dataset featuring details on reported encounters with unidentified flying objects. Sourced from the TidyTuesday project, this dataset compiles UFO sighting reports spanning different times, locations, and attributes. The analysis focuses on uncovering intriguing insights into the patterns and characteristics of UFO sightings. The report commences by offering a concise dataset description, emphasizing its provenance and dimensions.\nThe project explores the temporal aspect of UFO sightings, tracking trends over the years. An in-depth look into diurnal patterns during particular years adds to the comprehensive examination. Ultimately, this report serves as an entry point into the world of UFO sightings, offering data enthusiasts, researchers, and the general public an opportunity to unravel the mysteries of these unexplained phenomena. Its focus on data-driven analysis and visualization provides a foundation for ongoing investigations into the extraordinary and enigmatic realm of UFO encounters."
   },
   {
-    "objectID": "data/README 2.html#data-types",
-    "href": "data/README 2.html#data-types",
-    "title": "Data",
-    "section": "Data Types:",
-    "text": "Data Types:\n\nColumn: data type"
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Alien Encounters 🛸",
+    "section": "Introduction",
+    "text": "Introduction\nUnidentified Flying Objects (UFOs) have long captured our collective imagination, inspiring countless stories, debates, and questions about the unknown. In this era of data-driven exploration, we have a unique opportunity to delve into the world of UFO sightings using a comprehensive dataset. The UFO sightings Dataset was taken from the TidyTuesday project. This dataset compiles a treasure trove of reports, encompassing not just descriptions of UFO encounters, but also their temporal, spatial, and qualitative dimensions. Our journey through this dataset begins with an exploration of its provenance and dimensions, setting the stage for a systematic analysis aimed at unraveling the mysteries of UFO sightings. Through this report, we embark on an intellectual adventure to reveal the temporal and spatial patterns, examine correlations, and open the door to a world where the unexplained meets data-driven discovery."
+  },
+  {
+    "objectID": "index.html#question-1-what-are-the-number-of-ufo-encounters-globally",
+    "href": "index.html#question-1-what-are-the-number-of-ufo-encounters-globally",
+    "title": "Alien Encounters 🛸",
+    "section": "Question 1: What are the number of UFO encounters globally?",
+    "text": "Question 1: What are the number of UFO encounters globally?\n\nIntroduction\nFor the first question, we want to visualize the number of UFO sightings that have been reported in various global locations. The unexplained aerial phenomena are encountered frequently across different region of the world. Many scholars and enthusiasts are interested in these encounters in an effort to find any patterns or possible explanations. Here, we want to explore the geographical patterns and hotspots of UFO activity.\nFor the second part of the question, we have used circular packing to hierarchically visualize the number of sightings in each cities across the continents. Here, the outermost circle shows the continent name and inner circles display the number of sightings recorded in each country. We tried to identify fascinating trends and patterns which will help us in understanding the global mystery surrounding UFO sightings.\n\n\nApproach\nInitially the dataset was loaded from the “TidyTuesday” source using the read.csv function in R. The date and location columns were verified to ensure that they are in the correct data types. The unique values and frequency distributions of key variables, particularly reported_date_time, city, state, and country_code were studied. Relevant date and location information from the dataset, which includes reported_date_time, city, state, and country_code were extracted. To visualize the global distribution of UFO sightings, a geographical plot was drawn. Bubble map was plotted making use of the longitude and latitude information of the values city, state, and country_code variables.Bubble maps can simultaneously display both the geographical locations of UFO sightings and how their frequency has changed over time. Each bubble could represent a specific location and the number of sightings in that location.\nAfter arranging the distribution of UFO sightings geographically, we thought it will be interesting to know the frequency of mysterious UFO sightings in each country globally. Initially, we decided to plot geom_treemap for hierarchical visualization of the number of sightings in each city across the continents. However, we employed circular packing to make the story more readable and easier to follow. To get to our final result, the assignment of continents to countries based on their country code is performed. Then, to make it easier for the readers to read and comprehend the story, each country’s complete name is thoroughly provided. The count of the UFO sightings for each country determines the occurence rate of the incidents. For creating a circular packing for visualization of UFO sighting data, a new column patching is created in the dataset which specifies the structure of the circular plot. It is constructed with the varibales region, country_code, full_countryname & country_ufo_sighting from country_count dataset. The next step converts the dataset to hierarchical data structure with the help of as.Node() function. The plot is generated by using circlepackeR, with size defining the area of the circles. Suitable color range and width of the circle has been defined. The title is added to the plot using HTML formatting.\n\n\nAnalysis\n\n\n\n\n\n\n\n\nOccurence of UFO Sightings across the Countries in each Continents\n\n\n\n\n\n\nDiscussion\nThe bubble map uses the colored bubbles to represent data points on a geographical map. The bubbles speaks for a specific sighting, and its placement on the map. This helps to pin down where these events have happened. On clicking on the bubble, it provides a detailed information on country_code, country name, state_name and the count of the total number of sightings in that specific state. We considered the latitude and longitude values to spot these locations more accurately. For the second part of the question, we have used circular packing to hierarchically visualize the number of sightings in each cities across the continents. Here, the outermost circle shows the continent name and inner circles displays the number of sightings recorded in each countries. We tried to identify fascianting trends and patterns which will help us in understanding the global mystery surrounding UFO sightings.\nThe plot shows a hierarchical structure. The outer circle represents the continents. The inner bubbles inside the continents show country-code for individual countries. Upon interaction, it displays the country name with total number of UFO sightings recorded in that city.This enables viewers to access specific data about sightings in each country, which further benefits in quick and intuitive comparison of UFO sighting frequencies across each regions and countries. The region or cities having larger circles indicate a higher volume of sightings, while smaller circles tell us there are fewer occurrences. This gives a profound understanding of the data’s geographical pattern with highest and lowest UFO sighting counts. For instance, here the region North America or the country US has notably larger number of sightings than other places, which aligns with the popular association of North America and US with UFO sightings. Finally, it enables viewers to understand the relative frequency of UFO encounters immediately and makes it easier to conduct thorough investigations at both the regional and national levels."
+  },
+  {
+    "objectID": "index.html#question-2",
+    "href": "index.html#question-2",
+    "title": "Alien Encounters 🛸",
+    "section": "Question 2:",
+    "text": "Question 2:\n\nIntroduction\n\n\nApproach\n\n\nAnalysis\n\n\n\n\n\n\n\nDiscussion\nFurther, the day_part column was considered to understand the pattern of UFO sightings accross different parts of the day.\nThe following image represents the types of twilight that may be helpful in understanding the plot in a better way.\n\n\n\nTypes of twilight - source: science.howstuffworks.com\n\n\nThe bar chart depicts the number of UFO sightings reported during different parts of the day. The y-axis represents the various segments of the day, categorized into nine distinct periods viz. Night, Afternoon, Astronomical dusk, Nautical dusk, Morning, Civil dusk, Astronomical dawn, Nautical dawn, and Civil dawn. The y-axis represents the number of UFO sightings reported for each of these day-parts.\nFrom the above image, it is clear that the parts of the twilight between night-day and day-night are called dawn and dusk respectively.\n\nThe chart reveals that the highest number of UFO sightings, reaching a staggering 47,372, during the night. This is followed by a significant drop in sightings during the afternoon, with 12,353 reports. Astronomical dusk and nautical dusk witness a further decline in sightings, with 10,182 and 7,523 sightings respectively. Morning records a slightly less number of sightings compared to nautical dusk, with 7,379 reports. Civil dusk, astronomical dawn, and nautical dawn witness a consistent decrease in sightings, with 3,384, 1,688, and 1,281 reports, respectively. The lowest number of UFO sightings, a mere 648 reports, occurs during civil dawn.\n\nOverall, the chart highlights a clear pattern of UFO sightings being predominantly reported during the night, with a decrease in sightings as the day progresses towards dawn. This suggests that darkness or reduced visibility might play a role in the increased frequency of UFO sightings during nighttime."
+  },
+  {
+    "objectID": "presentation.html#the-ufo-footprints",
+    "href": "presentation.html#the-ufo-footprints",
+    "title": "Alien Encounters",
+    "section": "The UFO Footprints",
+    "text": "The UFO Footprints"
+  },
+  {
+    "objectID": "presentation.html#the-popular-destinations",
+    "href": "presentation.html#the-popular-destinations",
+    "title": "Alien Encounters",
+    "section": "The popular Destinations",
+    "text": "The popular Destinations"
+  },
+  {
+    "objectID": "presentation.html#heading-for-your-slide---q2-plot1",
+    "href": "presentation.html#heading-for-your-slide---q2-plot1",
+    "title": "Alien Encounters",
+    "section": "Heading for your slide - Q2 PLot1",
+    "text": "Heading for your slide - Q2 PLot1"
+  },
+  {
+    "objectID": "presentation.html#understanding-twilight",
+    "href": "presentation.html#understanding-twilight",
+    "title": "Alien Encounters",
+    "section": "Understanding Twilight",
+    "text": "Understanding Twilight\n\nTypes of twilight - source: science.howstuffworks.com"
+  },
+  {
+    "objectID": "presentation.html#the-confrontation",
+    "href": "presentation.html#the-confrontation",
+    "title": "Alien Encounters",
+    "section": "The Confrontation",
+    "text": "The Confrontation"
+  },
+  {
+    "objectID": "presentation.html#thank-you",
+    "href": "presentation.html#thank-you",
+    "title": "Alien Encounters",
+    "section": "Thank you !!",
+    "text": "Thank you !!"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project was developed by DataInk Drinkers For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nSwati Das : Graduate Student majoring in Data Science\nTejashwini K : Graduate Student majoring in Data Science\nPartha Koundinya P : Graduate Student majoring in Data Science\nChethana T S K : Graduate Student majoring in Data Science"
   }
 ]
