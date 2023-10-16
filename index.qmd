@@ -38,8 +38,38 @@ install.packages("leaflet", dependencies = TRUE, repos='http://cran.rstudio.com/
 library(leaflet)
 ```
 
-```{r fig.width=11,fig.height=6, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.align='center'}
+```{r echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
 
+#> Loading the Dataset 
+#> UFO_Sightings
+
+ufo <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/ufo_sightings.csv")
+
+#> Places - 
+
+places <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/places.csv")
+
+#View(ufo)
+#View(places)
+
+
+places_sub <- places |> select(state, country, country_code, latitude, longitude)
+places_sub <- places_sub %>% filter(!is.na(latitude) & !is.na(longitude))
+
+
+places_sub <- places_sub %>%group_by(state) %>%
+  mutate(State_Count = n()) %>%
+  ungroup()
+#View(places_sub)
+
+map <- leaflet(data = places_sub) %>% addTiles()
+
+map <- map %>% addCircleMarkers(lat = ~latitude, lng = ~longitude, color = "#FFAC33", radius = 5, popup = ~paste("Country_code: ", country_code,"<br>Country: ", country, "<br>State: ", state, "<br>count: ", State_Count))
+
+map
+```
+
+```{r fig.width=11,fig.height=6, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.align='center'}
 #Installing and loading the required packages
 if(!require(pacman))
   install.packages("pacman")
@@ -275,10 +305,7 @@ final_plot <- prependContent(circular_plot, tags$h3(title, style = final_style))
 
 
 final_plot
-
 ```
-
-
 
 
 ### Discussion
