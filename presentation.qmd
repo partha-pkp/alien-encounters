@@ -402,5 +402,6 @@ ggplot(new, aes(x=c2,y = reorder(c1,c2), fill = c1)) +
   
 ```
 
-## Thank you !!
+## Thank you !! {style="text-align: center"}
 
+![](images/gif1.gif){fig-align="center" width="150"}
