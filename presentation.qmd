@@ -46,7 +46,6 @@ library(leaflet)
 
 ```
 
-
 ```{r q1-plot1, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
 
 #> Loading the Dataset 
