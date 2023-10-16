@@ -1,5 +1,5 @@
 ---
-title: "Alien Encounters"
+title: "Alien Encounters 🛸"
 subtitle: "Visualizing UFO Sightings"
 author: "DataInk Drinkers"
 format: html
