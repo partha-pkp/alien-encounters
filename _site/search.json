@@ -193,7 +193,7 @@
     "href": "presentation.html#understanding-twilight",
     "title": "Alien Encounters",
     "section": "Understanding Twilight",
-    "text": "Understanding Twilight\n\n\n\nTypes of twilight - source: science.howstuffworks.com"
+    "text": "Understanding Twilight\n\nTypes of twilight - source: science.howstuffworks.com"
   },
   {
     "objectID": "presentation.html#heading-for-your-slide-----q2-plot1",
@@ -214,7 +214,7 @@
     "href": "presentation.html#thank-you",
     "title": "Alien Encounters",
     "section": "Thank you !!",
-    "text": "Thank you !!"
+    "text": "Thank you !!\n{fig-align = “left” width = “50”}"
   },
   {
     "objectID": "index.html#question-1-what-are-the-number-of-ufo-encounters-globally",
@@ -226,15 +226,29 @@
   {
     "objectID": "presentation.html#the-ufo-footprints",
     "href": "presentation.html#the-ufo-footprints",
-    "title": "Alien Encounters 🛸",
+    "title": "Alien Encounters",
     "section": "The UFO Footprints",
     "text": "The UFO Footprints"
   },
   {
     "objectID": "presentation.html#the-popular-destinations",
     "href": "presentation.html#the-popular-destinations",
-    "title": "Alien Encounters 🛸",
+    "title": "Alien Encounters",
     "section": "The popular Destinations",
     "text": "The popular Destinations"
+  },
+  {
+    "objectID": "presentation.html#thank-you-auto-animatetrue",
+    "href": "presentation.html#thank-you-auto-animatetrue",
+    "title": "Alien Encounters",
+    "section": "Thank you !! {auto-animate=“true}",
+    "text": "Thank you !! {auto-animate=“true}\n{fig-align = “left”, width = 50}"
+  },
+  {
+    "objectID": "presentation.html#thank-you-auto-animatetrue-fig-align-left-width-50",
+    "href": "presentation.html#thank-you-auto-animatetrue-fig-align-left-width-50",
+    "title": "Alien Encounters",
+    "section": "Thank you !! {auto-animate=“true” fig-align = “left” width = “50”}",
+    "text": "Thank you !! {auto-animate=“true” fig-align = “left” width = “50”}"
   }
 ]
