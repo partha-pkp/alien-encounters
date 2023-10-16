@@ -40,9 +40,13 @@ knitr::opts_chunk$set(
 ## The UFO Footprints
 
 ```{r echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, results='hide'}
-library(dplyr)
-install.packages("leaflet", dependencies = TRUE, repos='http://cran.rstudio.com/')
-library(leaflet)
+
+if(!require(pacman))
+  install.packages("pacman")
+
+pacman::p_load(tidyverse,
+               dplyr,
+               leaflet)
 
 ```
 
@@ -86,14 +90,13 @@ map
 if(!require(pacman))
   install.packages("pacman")
 
-install.packages('circlepackeR', dependencies = TRUE, repos='http://cran.rstudio.com/')
+pacman::p_load_gh("jeromefroe/circlepackeR")
 
 pacman::p_load(tidyverse,
                dplyr, 
                plotly, 
                scales, 
                hrbrthemes,
-               circlepackeR,
                data.tree,
                htmlwidgets,
                htmltools)
@@ -320,11 +323,100 @@ circular_plot
 
 ```
 
-# Question 2:
+# How did the trend of UFO sightings vary over years?
 
-## Heading for your slide - Q2 PLot1
+## The Trend
 
-```{r q2-plot1}
+```{r, fig.width=14,fig.height=16,echo=FALSE,warning=FALSE, error=FALSE, message=FALSE}
+#loading packages
+if(!require(pacman))
+  install.packages("pacman")
+pacman::p_load(tidyverse,
+               dplyr,
+               ggplot2,
+               gridExtra,
+               grid)
+
+#loading data
+ufo <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/ufo_sightings.csv")
+places <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/places.csv")
+
+#mutating 'continent' to ufo dataset
+ufo <- ufo |>
+  mutate(
+    continent = case_when(
+      country_code %in% c("US", "MX", "CA", "CR", "GT", "BZ", "BS", "DO", "HT",
+                          "JM", "BM", "SX", "BB", "HN", "LC", "VI", "CU", "PR", 
+                          "SV", "KN", "KY") ~ "North America",
+      country_code %in% c("AU", "NZ", "PW", "SB", "GU", "FJ", "TV") ~ "Australia and Oceania",
+      country_code %in% c("IN", "JP", "PK", "ID", "AM", "MY", "PH", "AE", "MV", 
+                          "TH", "LK", "CN", "KZ", "IQ", "KR", "OM", "JO", "AF",
+                          "TW", "IL", "VN", "IR", "BD", "SA", "KW", "HK", "NP", 
+                          "BN", "SG", "QA", "LA", "BH", "RU", "KH", "LB", "SY", 
+                          "MM", "UZ", "KG", "TL","TR","AZ") ~ "Asia",
+      country_code %in% c("FR", "GB", "DE", "NO", "CH", "BG", "ES", "LT", "HR",
+                          "IE", "NL", "IS", "IT", "FI", "CZ", "EE", "HU", "SE", 
+                          "PT", "PL", "DK", "CY", "BA", "SK", "RS", "RO", "MT", 
+                          "BE", "LV", "AL", "AT", "MK", "GR", "BY", "GE", "SI", 
+                          "LU", "FO", "MD", "UA", "GI", "XK", "ME") ~ "Europe",
+      country_code %in% c("CO", "BR", "VE", "BO", "AR", "TT", "CL", "PE", "EC", 
+                          "UY", "PA", "PY", "GY", "SR") ~ "South America",
+      country_code %in% c("ZA", "MA", "ZW", "AO", "MU", "LS", "NG", "EG", "CM",
+                          "UG", "KE", "DZ", "TD", "BW", "ZM", "TZ", "ET", "TN", 
+                          "SN", "LY", "LR", "GH", "CV", "MW", "SZ") ~ "Africa",
+      TRUE ~ "Antratica"
+    )
+  )
+
+#extracting year from reported_date_time_utc variable
+ufo<-ufo|>
+  mutate(year=year(as.Date.character(reported_date_time_utc)))
+
+#counting by grouping year and country code
+ufo<-ufo|>
+  group_by(year, country_code)|>
+  mutate(count=n())
+
+#plotting Africa data 
+a<-ggplot(subset(ufo,continent=="Africa"),mapping=aes(x=year))+
+  geom_density(color = "darkgreen",size=1)+
+  labs(x = "Year",y = "Density",title = "Africa")+
+  theme(axis.title=element_text(size=15),
+        title=element_text(size=20))
+#plotting North America data
+b<-ggplot(subset(ufo,continent=="North America"),mapping=aes(x=year))+
+  geom_density(color = "darkred",size=1)+
+  labs(x = "Year",y = "Density",title = "North America")+
+  theme(axis.title=element_text(size=15),
+        title=element_text(size=20))
+#plotting Australia and Oceania data
+c<-ggplot(subset(ufo,continent=="Australia and Oceania"),mapping=aes(x=year))+
+  geom_density(color = "darkorange",size=1)+
+  labs(x = "Year",y = "Density",title = "Australia and Oceania")+
+  theme(axis.title=element_text(size=15),
+        title=element_text(size=20))
+#plotting Asia data
+d<-ggplot(subset(ufo,continent=="Asia"),mapping=aes(x=year))+
+  geom_density(color = "darkblue",size=1)+
+  labs(x = "Year",y = "Density",title = "Asia")+
+  theme(axis.title=element_text(size=15),
+        title=element_text(size=20))
+#plotting Europe data
+e<-ggplot(subset(ufo,continent=="Europe"),mapping=aes(x=year))+
+  geom_density(colour = "darkgrey",size=1)+
+  labs(x = "Year",y = "Density",title = "Europe")+
+  theme(axis.title=element_text(size=15),
+        title=element_text(size=20))
+#plotting South America data
+f<-ggplot(subset(ufo,continent=="South America"),mapping=aes(x=year))+
+  geom_density(color = "darkviolet",size=1)+
+  labs(x = "Year",y = "Density",title = "South America")+
+  theme(axis.title=element_text(size=15),
+        title=element_text(size=20))
+
+#arranging all the plots in one frame
+grid.arrange(a,b,c,d,e,f,nrow=4,ncol=2,
+             top = textGrob("Variation in UFO sightings over the years\n",gp=gpar(fontsize=40,face = "bold")))
 
 
 

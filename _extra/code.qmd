@@ -110,14 +110,13 @@ ggplot(new, aes(x=c2,y = reorder(c1,c2), fill = c1)) +
 if(!require(pacman))
   install.packages("pacman")
 
-install.packages('circlepackeR', dependencies = TRUE, repos='http://cran.rstudio.com/')
+pacman::p_load_gh("jeromefroe/circlepackeR")
 
 pacman::p_load(tidyverse,
                dplyr, 
                plotly, 
                scales, 
                hrbrthemes,
-               circlepackeR,
                data.tree,
                htmlwidgets,
                htmltools)
@@ -418,9 +417,12 @@ ggplot(subset(ufo,continent=="North America"),mapping=aes(x=year))+
 
 #Bubble Map
 ```{r}
-library(dplyr)
-install.packages("leaflet", dependencies = TRUE, repos='http://cran.rstudio.com/')
-library(leaflet)
+if(!require(pacman))
+  install.packages("pacman")
+
+pacman::p_load(tidyverse,
+               dplyr,
+               leaflet)
 
 #> Loading the Dataset 
 #> UFO_Sightings

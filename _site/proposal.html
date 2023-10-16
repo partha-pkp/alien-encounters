@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DataInk Drinkers - Alien Encounters</title>
+<title>DataInk Drinkers - Alien Encounters 🛸</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -170,7 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Alien Encounters</h1>
+<h1 class="title">Alien Encounters 🛸</h1>
 <p class="subtitle lead">Visualizing UFO Sightings</p>
 </div>
 
@@ -281,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Analysis plan</h1>
 <section id="question-1" class="level2">
 <h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
-<p>To answer “What are the UFO sighting years and locations globally?”, initially the dataset has to be loaded from the “TidyTuesday” source using the <code>read.csv</code> function in R. The date and location columns have to be verified to ensure that they are in the correct data types. The structure and content of the dataset has to be understood clearly. The unique values and frequency distributions of key variables, particularly <code>reported_date_time</code>, <code>city</code>, <code>state</code>, <code>country_code</code>, and <code>day_part</code> have to be studied. Relevant date and location information from the dataset, which includes <code>reported_date_time</code>, <code>city</code>, <code>state</code>, <code>country_code</code>, and potentially <code>day_part</code> has to be extracted. Depending on the analysis, data by day, month, or year can be aggregated to examine the trends . To visualize the global distribution of UFO sightings, a geographical plot can be drawn. Bubble maps can be plotted making use of the <code>longitude</code> and <code>latitude</code> information of the values <code>city</code>, <code>state</code>, and <code>country_code</code> variables.&nbsp;Bubble maps can simultaneously display both the geographical locations of UFO sightings and how their frequency has changed over time. Each bubble could represent a specific location, and the size or color of the bubble can be used to encode the number of sightings in a particular year.<br>
+<p>To answer “What are the number of UFO encounters globally?”, initially the dataset has to be loaded from the “TidyTuesday” source using the <code>read.csv</code> function in R. The date and location columns have to be verified to ensure that they are in the correct data types. The structure and content of the dataset has to be understood clearly. The unique values and frequency distributions of key variables, particularly <code>reported_date_time</code>, <code>city</code>, <code>state</code>, <code>country_code</code>, and <code>day_part</code> have to be studied. Relevant date and location information from the dataset, which includes <code>reported_date_time</code>, <code>city</code>, <code>state</code>, <code>country_code</code>, and potentially <code>day_part</code> has to be extracted. Depending on the analysis, data by day, month, or year can be aggregated to examine the trends . To visualize the global distribution of UFO sightings, a geographical plot can be drawn. Bubble maps can be plotted making use of the <code>longitude</code> and <code>latitude</code> information of the values <code>city</code>, <code>state</code>, and <code>country_code</code> variables.&nbsp;Bubble maps can simultaneously display both the geographical locations of UFO sightings and how their frequency has changed over time. Each bubble could represent a specific location, and the size or color of the bubble can be used to encode the number of sightings in a particular year.<br>
 </p>
 <p>A <code>geom_treemap</code> can be used to hierarchically visualize the number of sightings depending on the geographical locations. This can be done by grouping the countries into respective continents. Then, the plots have to be customized with appropriate labels, titles, legends, and color schemes to enhance clarity and readability. The generated visualizations have to be analyzed for any notable patterns, clusters, or trends in UFO sightings over time and across locations to draw insights from the data.</p>
 </section>

@@ -33,9 +33,12 @@ After arranging the distribution of UFO sightings geographically, we thought it 
 ### Analysis
 
 ```{r echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, results='hide'}
-library(dplyr)
-install.packages("leaflet", dependencies = TRUE, repos='http://cran.rstudio.com/')
-library(leaflet)
+if(!require(pacman))
+  install.packages("pacman")
+
+pacman::p_load(tidyverse,
+               dplyr,
+               leaflet)
 ```
 
 ```{r echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
@@ -74,14 +77,13 @@ map
 if(!require(pacman))
   install.packages("pacman")
 
-install.packages('circlepackeR', dependencies = TRUE, repos='http://cran.rstudio.com/')
+pacman::p_load_gh("jeromefroe/circlepackeR")
 
 pacman::p_load(tidyverse,
                dplyr, 
                plotly, 
                scales, 
                hrbrthemes,
-               circlepackeR,
                data.tree,
                htmlwidgets,
                htmltools)
@@ -307,20 +309,123 @@ final_plot <- prependContent(circular_plot, tags$h3(title, style = final_style))
 final_plot
 ```
 
-
 ### Discussion
 
 The bubble map uses the colored bubbles to represent data points on a geographical map. The bubbles speaks for a specific sighting, and its placement on the map. This helps to pin down where these events have happened. On clicking on the bubble, it provides a detailed information on country_code, country name, state_name and the count of the total number of sightings in that specific state. We considered the latitude and longitude values to spot these locations more accurately. For the second part of the question, we have used circular packing to hierarchically visualize the number of sightings in each cities across the continents. Here, the outermost circle shows the continent name and inner circles displays the number of sightings recorded in each countries. We tried to identify fascianting trends and patterns which will help us in understanding the global mystery surrounding UFO sightings.
 
 The plot shows a hierarchical structure. The outer circle represents the continents. The inner bubbles inside the continents show country-code for individual countries. Upon interaction, it displays the country name with total number of UFO sightings recorded in that city.This enables viewers to access specific data about sightings in each country, which further benefits in quick and intuitive comparison of UFO sighting frequencies across each regions and countries. The region or cities having larger circles indicate a higher volume of sightings, while smaller circles tell us there are fewer occurrences. This gives a profound understanding of the data's geographical pattern with highest and lowest UFO sighting counts. For instance, here the region North America or the country US has notably larger number of sightings than other places, which aligns with the popular association of North America and US with UFO sightings. Finally, it enables viewers to understand the relative frequency of UFO encounters immediately and makes it easier to conduct thorough investigations at both the regional and national levels.
 
-## Question 2:
+## Question 2: How did the trend of UFO sightings vary over years?
 
 ### Introduction
 
+The fascination with unidentified flying objects (UFOs) has attracted people worldwide for decades. Over the years, countless reports of UFO sightings have been documented and to gain a deeper understanding of UFO sightings and their trends, it is important to investigate how the frequency and patterns of sightings have changed over time. Density plots were used to identify the trend in UFO sightings over the years. Further, a bar plot was used to understand relation of the sightings with reference to the parts of a day.
+
 ### Approach
 
+We started by making inferences from the previously generated plots in question 1. A new column was created to extract the year from the `reported_date_time` or `reported_date_time_utc` column. This allowed to group sightings by year. The number of sightings for each year was counted by grouping the data by the extracted year.
+
+To show the trend of UFO sightings over the years, density plots were used. They will be helpful in understanding the temporal distribution of UFO sightings.
+
+A bar plot was used to see at which part of the day the sightings happened. This type of visualization can provide insights into the diurnal patterns of UFO sightings and helps in understanding if there are any specific times of day when sightings are more frequent. Additional aesthetics, such as background image to the plot was added to make the plot visually attractive.
+
+Finally, the resulting plots can be used to analyze how UFO sightings have changed over time, showing the pattern visually.
+
 ### Analysis
+
+```{r, fig.width=14,fig.height=14,echo=FALSE,warning=FALSE, error=FALSE, message=FALSE}
+#loading packages
+if(!require(pacman))
+  install.packages("pacman")
+pacman::p_load(tidyverse,
+               dplyr,
+               ggplot2,
+               gridExtra,
+               grid)
+
+#loading data
+ufo <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/ufo_sightings.csv")
+places <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/places.csv")
+
+#mutating 'continent' to ufo dataset
+ufo <- ufo |>
+  mutate(
+    continent = case_when(
+      country_code %in% c("US", "MX", "CA", "CR", "GT", "BZ", "BS", "DO", "HT",
+                          "JM", "BM", "SX", "BB", "HN", "LC", "VI", "CU", "PR", 
+                          "SV", "KN", "KY") ~ "North America",
+      country_code %in% c("AU", "NZ", "PW", "SB", "GU", "FJ", "TV") ~ "Australia and Oceania",
+      country_code %in% c("IN", "JP", "PK", "ID", "AM", "MY", "PH", "AE", "MV", 
+                          "TH", "LK", "CN", "KZ", "IQ", "KR", "OM", "JO", "AF",
+                          "TW", "IL", "VN", "IR", "BD", "SA", "KW", "HK", "NP", 
+                          "BN", "SG", "QA", "LA", "BH", "RU", "KH", "LB", "SY", 
+                          "MM", "UZ", "KG", "TL","TR","AZ") ~ "Asia",
+      country_code %in% c("FR", "GB", "DE", "NO", "CH", "BG", "ES", "LT", "HR",
+                          "IE", "NL", "IS", "IT", "FI", "CZ", "EE", "HU", "SE", 
+                          "PT", "PL", "DK", "CY", "BA", "SK", "RS", "RO", "MT", 
+                          "BE", "LV", "AL", "AT", "MK", "GR", "BY", "GE", "SI", 
+                          "LU", "FO", "MD", "UA", "GI", "XK", "ME") ~ "Europe",
+      country_code %in% c("CO", "BR", "VE", "BO", "AR", "TT", "CL", "PE", "EC", 
+                          "UY", "PA", "PY", "GY", "SR") ~ "South America",
+      country_code %in% c("ZA", "MA", "ZW", "AO", "MU", "LS", "NG", "EG", "CM",
+                          "UG", "KE", "DZ", "TD", "BW", "ZM", "TZ", "ET", "TN", 
+                          "SN", "LY", "LR", "GH", "CV", "MW", "SZ") ~ "Africa",
+      TRUE ~ "Antratica"
+    )
+  )
+
+#extracting year from reported_date_time_utc variable
+ufo<-ufo|>
+  mutate(year=year(as.Date.character(reported_date_time_utc)))
+
+#counting by grouping year and country code
+ufo<-ufo|>
+  group_by(year, country_code)|>
+  mutate(count=n())
+ 
+
+#plotting Africa data 
+a<-ggplot(subset(ufo,continent=="Africa"),mapping=aes(x=year))+
+  geom_density(color = "darkgreen",size=1)+
+  labs(x = "Year",y = "Density",title = "Africa")+
+  theme(axis.title=element_text(size=15),
+        title=element_text(size=20))
+#plotting North America data
+b<-ggplot(subset(ufo,continent=="North America"),mapping=aes(x=year))+
+  geom_density(color = "darkred",size=1)+
+  labs(x = "Year",y = "Density",title = "North America")+
+  theme(axis.title=element_text(size=15),
+        title=element_text(size=20))
+#plotting Australia and Oceania data
+c<-ggplot(subset(ufo,continent=="Australia and Oceania"),mapping=aes(x=year))+
+  geom_density(color = "darkorange",size=1)+
+  labs(x = "Year",y = "Density",title = "Australia and Oceania")+
+  theme(axis.title=element_text(size=15),
+        title=element_text(size=20))
+#plotting Asia data
+d<-ggplot(subset(ufo,continent=="Asia"),mapping=aes(x=year))+
+  geom_density(color = "darkblue",size=1)+
+  labs(x = "Year",y = "Density",title = "Asia")+
+  theme(axis.title=element_text(size=15),
+        title=element_text(size=20))
+#plotting Europe data
+e<-ggplot(subset(ufo,continent=="Europe"),mapping=aes(x=year))+
+  geom_density(colour = "darkgrey",size=1)+
+  labs(x = "Year",y = "Density",title = "Europe")+
+  theme(axis.title=element_text(size=15),
+        title=element_text(size=20))
+#plotting South America data
+f<-ggplot(subset(ufo,continent=="South America"),mapping=aes(x=year))+
+  geom_density(color = "darkviolet",size=1)+
+  labs(x = "Year",y = "Density",title = "South America")+
+  theme(axis.title=element_text(size=15),
+        title=element_text(size=20))
+
+#arranging all the plots in one frame
+grid.arrange(a,b,c,d,e,f,nrow=4,ncol=2,
+             top = textGrob("Variation in UFO sightings over the years\n",gp=gpar(fontsize=40,face = "bold")))
+  
+```
 
 ```{r, fig.width=11,fig.height=6, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
 
@@ -392,6 +497,8 @@ ggplot(new, aes(x=c2,y = reorder(c1,c2), fill = c1)) +
 ```
 
 ### Discussion
+
+The density plots provide a visual representation of how UFO sightings have varied over the years. They allow us to observe patterns and trends of UFO sightings across the globe. Analyzing these trends help in understanding the factors that influence UFO sightings and their reporting across the world. For every continent, there has been an increase in the number of UFO sightings since the beginning of 21st century. Among all the continents, North America accounts for the highest value of density. Whereas, South America has the least value.
 
 Further, the `day_part` column was considered to understand the pattern of UFO sightings accross different parts of the day.\
 The following image represents the types of twilight that may be helpful in understanding the plot in a better way.
