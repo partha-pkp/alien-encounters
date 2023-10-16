@@ -193,7 +193,7 @@
     "href": "presentation.html#understanding-twilight",
     "title": "Alien Encounters",
     "section": "Understanding Twilight",
-    "text": "Understanding Twilight\n\nTypes of twilight - source: science.howstuffworks.com"
+    "text": "Understanding Twilight\n\n\n\nTypes of twilight - source: science.howstuffworks.com"
   },
   {
     "objectID": "presentation.html#heading-for-your-slide-----q2-plot1",
@@ -215,5 +215,12 @@
     "title": "Alien Encounters",
     "section": "Thank you !!",
     "text": "Thank you !!"
+  },
+  {
+    "objectID": "index.html#question-1-what-are-the-number-of-ufo-encounters-globally",
+    "href": "index.html#question-1-what-are-the-number-of-ufo-encounters-globally",
+    "title": "Alien Encounters",
+    "section": "Question 1: What are the number of UFO encounters globally?",
+    "text": "Question 1: What are the number of UFO encounters globally?\n\nIntroduction\nFor the first question, we want to visualize the number of UFO sightings that have been reported in various global locations. The unexplained aerial phenomena are encountered frequently across different region of the world. Many scholars and enthusiasts are interested in these encounters in an effort to find any patterns or possible explanations. Here, we want to explore the geographical patterns and hotspots of UFO activity.\n\n\nApproach\nInitially the dataset was loaded from the “TidyTuesday” source using the read.csv function in R. The date and location columns were verified to ensure that they are in the correct data types. The unique values and frequency distributions of key variables, particularly reported_date_time, city, state, and country_code were studied. Relevant date and location information from the dataset, which includes reported_date_time, city, state, and country_code were extracted. To visualize the global distribution of UFO sightings, a geographical plot was drawn. Bubble map was plotted making use of the longitude and latitude information of the values city, state, and country_code variables. Bubble maps can simultaneously display both the geographical locations of UFO sightings and how their frequency has changed over time. Each bubble could represent a specific location and the number of sightings in that location.\n\n\nAnalysis\n\n\nDiscussion\nThe bubble map uses the colored bubbles to represent data points on a geographical map. The bubbles speaks for a specific sighting, and its placement on the map. This helps to pin down where these events have happened. On clicking on the bubble, it provides a detailed information on country_code, country name, state_name and the count of the total number of sightings in that specific state. We considered the latitude and longitude values to spot these locations more accurately. For the second part of the question, we have used circular packing to hierarchically visualize the number of sightings in each cities across the continents. Here, the outermost circle shows the continent name and inner circles displays the number of sightings recorded in each countries. We tried to identify fascianting trends and patterns which will help us in understanding the global mystery surrounding UFO sightings."
   }
 ]

@@ -124,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1:</a>
+  <li><a href="#question-1-what-are-the-number-of-ufo-encounters-globally" id="toc-question-1-what-are-the-number-of-ufo-encounters-globally" class="nav-link" data-scroll-target="#question-1-what-are-the-number-of-ufo-encounters-globally">Question 1: What are the number of UFO encounters globally?</a>
   <ul class="collapse">
   <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1">Introduction</a></li>
   <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
@@ -177,19 +177,22 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Unidentified Flying Objects (UFOs) have long captured our collective imagination, inspiring countless stories, debates, and questions about the unknown. In this era of data-driven exploration, we have a unique opportunity to delve into the world of UFO sightings using a comprehensive dataset. The <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-06-20">UFO sightings Dataset</a> was taken from the TidyTuesday project. This dataset compiles a treasure trove of reports, encompassing not just descriptions of UFO encounters, but also their temporal, spatial, and qualitative dimensions. Our journey through this dataset begins with an exploration of its provenance and dimensions, setting the stage for a systematic analysis aimed at unraveling the mysteries of UFO sightings. Through this report, we embark on an intellectual adventure to reveal the temporal and spatial patterns, examine correlations, and open the door to a world where the unexplained meets data-driven discovery.</p>
 </section>
-<section id="question-1" class="level2">
-<h2 class="anchored" data-anchor-id="question-1">Question 1:</h2>
+<section id="question-1-what-are-the-number-of-ufo-encounters-globally" class="level2">
+<h2 class="anchored" data-anchor-id="question-1-what-are-the-number-of-ufo-encounters-globally">Question 1: What are the number of UFO encounters globally?</h2>
 <section id="introduction-1" class="level3">
 <h3 class="anchored" data-anchor-id="introduction-1">Introduction</h3>
+<p>For the first question, we want to visualize the number of UFO sightings that have been reported in various global locations. The unexplained aerial phenomena are encountered frequently across different region of the world. Many scholars and enthusiasts are interested in these encounters in an effort to find any patterns or possible explanations. Here, we want to explore the geographical patterns and hotspots of UFO activity.</p>
 </section>
 <section id="approach" class="level3">
 <h3 class="anchored" data-anchor-id="approach">Approach</h3>
+<p>Initially the dataset was loaded from the “TidyTuesday” source using the <code>read.csv</code> function in R. The date and location columns were verified to ensure that they are in the correct data types. The unique values and frequency distributions of key variables, particularly <code>reported_date_time</code>, <code>city</code>, <code>state</code>, and <code>country_code</code> were studied. Relevant date and location information from the dataset, which includes <code>reported_date_time</code>, <code>city</code>, <code>state</code>, and <code>country_code</code> were extracted. To visualize the global distribution of UFO sightings, a geographical plot was drawn. Bubble map was plotted making use of the <code>longitude</code> and <code>latitude</code> information of the values <code>city</code>, <code>state</code>, and <code>country_code</code> variables.&nbsp;Bubble maps can simultaneously display both the geographical locations of UFO sightings and how their frequency has changed over time. Each bubble could represent a specific location and the number of sightings in that location.</p>
 </section>
 <section id="analysis" class="level3">
 <h3 class="anchored" data-anchor-id="analysis">Analysis</h3>
 </section>
 <section id="discussion" class="level3">
 <h3 class="anchored" data-anchor-id="discussion">Discussion</h3>
+<p>The bubble map uses the colored bubbles to represent data points on a geographical map. The bubbles speaks for a specific sighting, and its placement on the map. This helps to pin down where these events have happened. On clicking on the bubble, it provides a detailed information on country_code, country name, state_name and the count of the total number of sightings in that specific state. We considered the latitude and longitude values to spot these locations more accurately. For the second part of the question, we have used circular packing to hierarchically visualize the number of sightings in each cities across the continents. Here, the outermost circle shows the continent name and inner circles displays the number of sightings recorded in each countries. We tried to identify fascianting trends and patterns which will help us in understanding the global mystery surrounding UFO sightings.</p>
 </section>
 </section>
 <section id="question-2" class="level2">

@@ -1,18 +1,14 @@
 {
-  "hash": "faa88d6c951300a09e042544913f2cc6",
+  "hash": "6cc0a0924bc51464890abe7d13f1a61c",
   "result": {
-    "markdown": "---\ntitle: \"Alien Encounters\"\nsubtitle: \"Visualizing UFO Sightings\"\nauthor: \"-- DataInk Drinkers\"\ntitle-slide-attributes:\n  data-background-image: images/bg5.png\n  data-background-size: \"None\"\n  data-background-opacity: \"0.7\"\n  data-slide-number: none\nformat:\n  revealjs:\n    theme: league\n    transition: slide\n    background-transition: fade\n  \neditor: visual\nexecute:\n  echo: false\n---\n\n\n\n\n\n\n\n\n# Question 1: \n\n## Heading for your slide - Q1 PLot1\n\n\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n\n## Heading for your slide - Q1 PLot2\n\n\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n\n# Question 2: \n\n## Heading for your slide - Q2 PLot1\n\n\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n## Understanding Twilight\n\n![Types of twilight - [source: science.howstuffworks.com](https://science.howstuffworks.com/nature/climate-weather/atmospheric/twilight-dusk.htm)](images/twilight.jpg){width=6in}\n\n\n\n## The Confrontation\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](presentation_files/figure-revealjs/unnamed-chunk-4-1.png){fig-align='center' width=4200}\n:::\n:::\n\n\n## Thank you !!\n",
+    "markdown": "---\ntitle: \"Alien Encounters\"\nsubtitle: \"Visualizing UFO Sightings\"\nauthor: \"-- DataInk Drinkers\"\ntitle-slide-attributes:\n  data-background-image: images/bg5.png\n  data-background-size: \"None\"\n  data-background-opacity: \"0.7\"\n  data-slide-number: none\nformat:\n  revealjs:\n    theme: league\n    transition: slide\n    background-transition: fade\n  \neditor: visual\nexecute:\n  echo: false\n---\n\n\n\n\n\n\n\n\n\n# Question 1: \n\n## Heading for your slide - Q1 PLot1\n\n\n\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n\n\n## Heading for your slide - Q1 PLot2\n\n\n\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n\n\n# Question 2: \n\n## Heading for your slide - Q2 PLot1\n\n\n\n::: {.cell layout-align=\"center\"}\n\n:::\n\n\n\n## Understanding Twilight\n\n![Types of twilight - [source: science.howstuffworks.com](https://science.howstuffworks.com/nature/climate-weather/atmospheric/twilight-dusk.htm)](images/twilight.jpg){width=6in}\n\n\n\n## The Confrontation\n\n\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](presentation_files/figure-html/unnamed-chunk-4-1.png){fig-align='center' width=4200}\n:::\n:::\n\n\n\n## Thank you !!\n",
     "supporting": [
-      "presentation_files"
+      "presentation_files/figure-html"
     ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
-    "includes": {
-      "include-after-body": [
-        "\r\n<script>\r\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\r\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\r\n  // slide changes (different for each slide format).\r\n  (function () {\r\n    // dispatch for htmlwidgets\r\n    function fireSlideEnter() {\r\n      const event = window.document.createEvent(\"Event\");\r\n      event.initEvent(\"slideenter\", true, true);\r\n      window.document.dispatchEvent(event);\r\n    }\r\n\r\n    function fireSlideChanged(previousSlide, currentSlide) {\r\n      fireSlideEnter();\r\n\r\n      // dispatch for shiny\r\n      if (window.jQuery) {\r\n        if (previousSlide) {\r\n          window.jQuery(previousSlide).trigger(\"hidden\");\r\n        }\r\n        if (currentSlide) {\r\n          window.jQuery(currentSlide).trigger(\"shown\");\r\n        }\r\n      }\r\n    }\r\n\r\n    // hookup for slidy\r\n    if (window.w3c_slidy) {\r\n      window.w3c_slidy.add_observer(function (slide_num) {\r\n        // slide_num starts at position 1\r\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\r\n      });\r\n    }\r\n\r\n  })();\r\n</script>\r\n\r\n"
-      ]
-    },
+    "includes": {},
     "engineDependencies": {},
     "preserve": {},
     "postProcess": true
