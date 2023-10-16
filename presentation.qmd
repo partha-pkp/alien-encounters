@@ -1,15 +1,17 @@
 ---
-title: "Project title"
-subtitle: "INFO 526 - Fall 2023 - Project 1"
-author: "Author names"
+title: "Alien Encounters"
+subtitle: "Visualizing UFO Sightings"
+author: "-- DataInk Drinkers"
 title-slide-attributes:
-  data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
-  data-background-size: stretch
+  data-background-image: images/bg5.png
+  data-background-size: "None"
   data-background-opacity: "0.7"
   data-slide-number: none
 format:
   revealjs:
-    theme:  ['data/customtheming.scss']
+    theme: league
+    transition: slide
+    background-transition: fade
   
 editor: visual
 execute:
@@ -33,13 +35,14 @@ pacman::p_load(tidymodels,
 # Plot theme
 ggplot2::theme_set(ggplot2::theme_minimal(base_size = 11))
 
-# For better figure resolution
+# set figure parameters for knitr
 knitr::opts_chunk$set(
-  fig.retina = 3, 
-  dpi = 300, 
-  fig.width = 6, 
-  fig.asp = 0.618 
-  )
+  fig.width = 7,        # 7" width
+  fig.asp = 0.618,      # the golden ratio
+  fig.retina = 3,       # dpi multiplier for displaying HTML output on retina
+  fig.align = "center", # center align figures
+  dpi = 300             # higher dpi, sharper image
+)
 ```
 
 ```{r}
@@ -52,114 +55,108 @@ mtcars$speed <- mtcars$hp / mtcars$wt
 data("penguins")
 ```
 
-# Using Quarto for presentations
+# Question 1: 
 
-## Quarto
+## Heading for your slide - Q1 PLot1
 
--   The presentation is created using the Quarto CLI
+```{r q1-plot1}
 
--   `##` sets the start of a new slide
 
-## Layouts
-
-You can use plain text
-
-::: columns
-::: {.column width="40%"}
--   or bullet points[^1]
-:::
-
-::: {.column width="60%"}
-or in two columns
-:::
-:::
-
-[^1]: And add footnotes
-
--   like
-
--   this
-
-## Code
-
-```{r, echo=FALSE}
-model <- lm(mpg ~ speed, data = mtcars) 
-
-model |> tidy()
-
-model |> glance()
 
 ```
 
-## Plots
 
-```{r}
-penguins |>
-  mutate(species = ifelse(species == "Adelie", "Adelie", "Other")) |>
-  ggplot(aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
-  geom_point()
+## Heading for your slide - Q1 PLot2
+
+```{r q1-plot2}
+
+
+
 ```
 
-## Plot and text
 
-::: columns
-::: {.column width="50%"}
--   Some text
+# Question 2: 
 
--   goes here
-:::
+## Heading for your slide - Q2 PLot1
 
-::: {.column width="50%"}
-```{r, warning=FALSE, fig.width=5.5}
-penguins |>
-  ggplot(aes(x = bill_length_mm, y = species, color = species)) +
-  geom_boxplot(linewidth = 0.75,
-               outlier.size = 2.5) +
-  theme_minimal(base_size = 15) +
-  theme(legend.key.size = unit(0.8, "cm"))
-```
-:::
-:::
+```{r q2-plot1}
 
-# A new section...
 
-## Tables
 
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
-
-```{r}
-penguins |> 
-  head() |>
-  kableExtra::kable() |>
-  kableExtra::kable_styling()
 ```
 
-## Images
+## Understanding Twilight
 
-![Image credit: Danielle Navarro, Percolate.](images/watercolour_sys02_img34_teacup-ocean.png){fig-align="center" width="500"}
+![Types of twilight - [source: science.howstuffworks.com](https://science.howstuffworks.com/nature/climate-weather/atmospheric/twilight-dusk.htm)](images/twilight.jpg){width=6in}
 
-## Math Expressions {.smaller}
 
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. \$\\alpha+\\beta\$ renders $\alpha + \beta$. You can use the display style with double dollar signs:
 
-```         
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+## The Confrontation
+
+```{r, fig.width=14,fig.height=7, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+# Libraries required
+library(ggplot2)
+library(hrbrthemes)
+library(tidyverse)
+library(ggpubr)
+library(jpeg)
+library(png)
+
+
+
+# Loading data
+data <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/ufo_sightings.csv")
+
+# N=Removing NAs from the data
+noNAData <- na.omit(data)
+
+# Extracting the "day_partcolumn from the dataset"
+dp <- noNAData |>
+ count(day_part)
+
+# Creating  new columns to generate a new dataframe
+c1 <- dp[,1]
+c2 <- dp[,2]
+
+# Creating a new data-frame with the day-parts and the number of sightings
+new <- data.frame(c1,c2) 
+
+
+
+# Importing the background image
+img <- readPNG("images/img7.png")
+
+# Customizing y-axis ticks
+ y_ticks <- c("Civil dawn", "Nautical dawn", "Astronomical dawn", "Civil dusk","Morning","Nautical dusk", "Astronomical dusk", "Afternoon", "Night")
+
+ 
+# Generating the plot
+ggplot(new, aes(x=c2,y = reorder(c1,c2), fill = c1)) +
+  background_image(img)+
+  geom_bar(stat = "identity",color="white") +
+  theme_minimal()+
+  scale_fill_grey() +
+  scale_y_discrete(labels= y_ticks)+
+  ggtitle("Sighting UFOs at distinct day-parts\n") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 20))+
+  labs(x = "\nNo. of sightings",
+       y = "Parts of the Day\n")+
+  theme(axis.title.x = element_text(size = 14, face = "bold", hjust = 0.5),
+        axis.title.y = element_text(size = 14, face = "bold", hjust = 0.5),
+        axis.text.x = element_text(face="bold", size= 11),
+        axis.text.y = element_text(face="bold", size= 11),
+        legend.position="none",
+        plot.margin = margin(t = 1,  # Top margin
+                             r = 4,  # Right margin
+                             b = 1,  # Bottom margin
+                             l = 1,  # Left margin
+                             unit = "lines"))+
+  geom_text(x = 50000, # Set the position of the text to always be at '50000'
+            hjust = 0,
+            size = 4,
+            label = c2)+
+  coord_cartesian(clip = "off")
+  
 ```
 
-$$
-\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i
-$$
-
-Limitations:
-
-1.  The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
-
-2.  There should not be spaces after the opening `$` or before the closing `$`.
-
-# Wrap up
-
-## Feeling adventurous?
-
--   You are welcomed to use the default styling of the slides. In fact, that's what I expect majority of you will do. You will differentiate yourself with the content of your presentation.
-
--   But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs.
+## Thank you !!

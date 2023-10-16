@@ -2,11 +2,11 @@ project:
   type: website
 
 website:
-  title: Project Title
+  title: DataInk Drinkers
   navbar:
     right:
       - icon: github
-        href: https://github.com/INFO526-DataViz/project-01
+        href: https://github.com/INFO526-DataViz/project-01-DataInk-Drinkers
     left:
       - text: Project
         href: index.qmd
@@ -19,7 +19,10 @@ website:
 
 format:
   html:
-    theme: default
+    theme:
+      light: flatly
+      dark: darkly
+      
     toc: true
 
 execute:

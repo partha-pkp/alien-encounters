@@ -6,6 +6,133 @@ format: html
 editor: visual
 ---
 
+
 ## Abstract
 
-Add project abstract here.
+The present work delves into the fascinating world of UFO sightings, leveraging a comprehensive dataset featuring details on reported encounters with unidentified flying objects. Sourced from the TidyTuesday project, this dataset compiles UFO sighting reports spanning different times, locations, and attributes. The analysis focuses on uncovering intriguing insights into the patterns and characteristics of UFO sightings. The report commences by offering a concise dataset description, emphasizing its provenance and dimensions. 
+
+The project explores the temporal aspect of UFO sightings, tracking trends over the years. An in-depth look into diurnal patterns during particular years adds to the comprehensive examination. Ultimately, this report serves as an entry point into the world of UFO sightings, offering data enthusiasts, researchers, and the general public an opportunity to unravel the mysteries of these unexplained phenomena. Its focus on data-driven analysis and visualization provides a foundation for ongoing investigations into the extraordinary and enigmatic realm of UFO encounters.
+
+## Introduction
+
+
+Unidentified Flying Objects (UFOs) have long captured our collective imagination, inspiring countless stories, debates, and questions about the unknown. In this era of data-driven exploration, we have a unique opportunity to delve into the world of UFO sightings using a comprehensive dataset. The [UFO sightings Dataset](https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-06-20) was taken from the TidyTuesday project. This dataset compiles a treasure trove of reports, encompassing not just descriptions of UFO encounters, but also their temporal, spatial, and qualitative dimensions. Our journey through this dataset begins with an exploration of its provenance and dimensions, setting the stage for a systematic analysis aimed at unraveling the mysteries of UFO sightings. Through this report, we embark on an intellectual adventure to reveal the temporal and spatial patterns, examine correlations, and open the door to a world where the unexplained meets data-driven discovery.
+
+
+## Question 1: 
+
+### Introduction
+
+### Approach
+
+
+### Analysis
+
+
+### Discussion
+
+
+## Question 2: 
+
+### Introduction
+
+### Approach
+
+
+### Analysis
+
+
+
+```{r, fig.width=11,fig.height=6, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+# Libraries required
+library(ggplot2)
+library(hrbrthemes)
+library(tidyverse)
+library(ggpubr)
+library(jpeg)
+library(png)
+
+
+
+# Loading data
+data <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/ufo_sightings.csv")
+
+# N=Removing NAs from the data
+noNAData <- na.omit(data)
+
+# Extracting the "day_partcolumn from the dataset"
+dp <- noNAData |>
+ count(day_part)
+
+# Creating  new columns to generate a new dataframe
+c1 <- dp[,1]
+c2 <- dp[,2]
+
+# Creating a new data-frame with the day-parts and the number of sightings
+new <- data.frame(c1,c2) 
+
+
+
+# Importing the background image
+img <- readPNG("images/img7.png")
+
+# Customizing y-axis ticks
+ y_ticks <- c("Civil dawn", "Nautical dawn", "Astronomical dawn", "Civil dusk","Morning","Nautical dusk", "Astronomical dusk", "Afternoon", "Night")
+
+ 
+# Generating the plot
+ggplot(new, aes(x=c2,y = reorder(c1,c2), fill = c1)) +
+  background_image(img)+
+  geom_bar(stat = "identity",color="white") +
+  theme_minimal()+
+  scale_fill_grey() +
+  scale_y_discrete(labels= y_ticks)+
+  ggtitle("Sighting UFOs at distinct day-parts\n") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold", size = 20))+
+  labs(x = "\nNo. of sightings",
+       y = "Parts of the Day\n")+
+  theme(axis.title.x = element_text(size = 14, face = "bold", hjust = 0.5),
+        axis.title.y = element_text(size = 14, face = "bold", hjust = 0.5),
+        axis.text.x = element_text(face="bold", size= 11),
+        axis.text.y = element_text(face="bold", size= 11),
+        legend.position="none",
+        plot.margin = margin(t = 1,  # Top margin
+                             r = 4,  # Right margin
+                             b = 1,  # Bottom margin
+                             l = 1,  # Left margin
+                             unit = "lines"))+
+  geom_text(x = 50000, # Set the position of the text to always be at '50000'
+            hjust = 0,
+            size = 4,
+            label = c2)+
+  coord_cartesian(clip = "off")
+  
+  
+
+```
+
+
+### Discussion
+
+
+
+
+
+
+
+Further, the `day_part` column was considered to understand the pattern of UFO sightings accross different parts of the day.\
+The following image represents the types of twilight that may be helpful in understanding the  plot in a better way.
+
+![Types of twilight - [source: science.howstuffworks.com](https://science.howstuffworks.com/nature/climate-weather/atmospheric/twilight-dusk.htm)](images/twilight.jpg){width=6in}
+
+
+The bar chart depicts the number of UFO sightings reported during different parts of the day. The y-axis represents the various segments of the day, categorized into nine distinct periods viz. Night, Afternoon, Astronomical dusk, Nautical dusk, Morning, Civil dusk, Astronomical dawn, Nautical dawn, and Civil dawn. The y-axis represents the number of UFO sightings reported for each of these day-parts.
+
+From the above image, it is clear that the parts of the twilight between night-day and day-night are called dawn and dusk respectively.\
+
+The chart reveals that the highest number of UFO sightings, reaching a staggering 47,372, during the night. This is followed by a significant drop in sightings during the afternoon, with 12,353 reports. Astronomical dusk and nautical dusk witness a further decline in sightings, with 10,182 and 7,523 sightings respectively. Morning records a slightly less number of sightings compared to nautical dusk, with 7,379 reports. Civil dusk, astronomical dawn, and nautical dawn witness a consistent decrease in sightings, with 3,384, 1,688, and 1,281 reports, respectively. The lowest number of UFO sightings, a mere 648 reports, occurs during civil dawn.\
+
+Overall, the chart highlights a clear pattern of UFO sightings being predominantly reported during the night, with a decrease in sightings as the day progresses towards dawn. This suggests that darkness or reduced visibility might play a role in the increased frequency of UFO sightings during nighttime.
+
+ 

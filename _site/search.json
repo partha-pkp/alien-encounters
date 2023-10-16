@@ -30,63 +30,63 @@
   {
     "objectID": "presentation.html#quarto",
     "href": "presentation.html#quarto",
-    "title": "Project title",
-    "section": "",
-    "text": "The presentation is created using the Quarto CLI\n## sets the start of a new slide"
+    "title": "Alien Encounters",
+    "section": "Quarto",
+    "text": "Quarto\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
   },
   {
     "objectID": "presentation.html#layouts",
     "href": "presentation.html#layouts",
-    "title": "Project title",
-    "section": "",
-    "text": "You can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis"
+    "title": "Alien Encounters",
+    "section": "Layouts",
+    "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
   },
   {
     "objectID": "presentation.html#code",
     "href": "presentation.html#code",
-    "title": "Project title",
-    "section": "",
-    "text": "# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
+    "title": "Alien Encounters",
+    "section": "Code",
+    "text": "Code\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
   },
   {
     "objectID": "presentation.html#plots",
     "href": "presentation.html#plots",
-    "title": "Project title",
-    "section": "",
-    "text": "Warning: Removed 2 rows containing missing values (`geom_point()`)."
+    "title": "Alien Encounters",
+    "section": "Plots",
+    "text": "Plots"
   },
   {
     "objectID": "presentation.html#plot-and-text",
     "href": "presentation.html#plot-and-text",
-    "title": "Project title",
-    "section": "",
-    "text": "Some text\ngoes here"
+    "title": "Alien Encounters",
+    "section": "Plot and text",
+    "text": "Plot and text\n\n\n\nSome text\ngoes here"
   },
   {
     "objectID": "presentation.html#tables",
     "href": "presentation.html#tables",
-    "title": "Project title",
+    "title": "Alien Encounters",
     "section": "Tables",
     "text": "Tables\nIf you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\n\n\n\n\nAdelie\nTorgersen\n39.1\n18.7\n181\n3750\nmale\n\n\nAdelie\nTorgersen\n39.5\n17.4\n186\n3800\nfemale\n\n\nAdelie\nTorgersen\n40.3\n18.0\n195\n3250\nfemale\n\n\nAdelie\nTorgersen\nNA\nNA\nNA\nNA\nNA\n\n\nAdelie\nTorgersen\n36.7\n19.3\n193\n3450\nfemale\n\n\nAdelie\nTorgersen\n39.3\n20.6\n190\n3650\nmale"
   },
   {
     "objectID": "presentation.html#images",
     "href": "presentation.html#images",
-    "title": "Project title",
+    "title": "Alien Encounters",
     "section": "Images",
-    "text": "Images\n\n\n\nImage credit: Danielle Navarro, Percolate."
+    "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
   },
   {
     "objectID": "presentation.html#math-expressions",
     "href": "presentation.html#math-expressions",
-    "title": "Project title",
+    "title": "Alien Encounters",
     "section": "Math Expressions",
     "text": "Math Expressions\nYou can write LaTeX math expressions inside a pair of dollar signs, e.g. $\\alpha+\\beta$ renders \\(\\alpha + \\beta\\). You can use the display style with double dollar signs:\n$$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$$\n\\[\n\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\n\\]\nLimitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
   },
   {
     "objectID": "presentation.html#feeling-adventurous",
     "href": "presentation.html#feeling-adventurous",
-    "title": "Project title",
+    "title": "Alien Encounters",
     "section": "Feeling adventurous?",
     "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
   },
@@ -102,20 +102,118 @@
     "href": "index.html",
     "title": "Alien Encounters",
     "section": "",
-    "text": "Add project abstract here."
+    "text": "The present work delves into the fascinating world of UFO sightings, leveraging a comprehensive dataset featuring details on reported encounters with unidentified flying objects. Sourced from the TidyTuesday project, this dataset compiles UFO sighting reports spanning different times, locations, and attributes. The analysis focuses on uncovering intriguing insights into the patterns and characteristics of UFO sightings. The report commences by offering a concise dataset description, emphasizing its provenance and dimensions.\nThe project explores the temporal aspect of UFO sightings, tracking trends over the years. An in-depth look into diurnal patterns during particular years adds to the comprehensive examination. Ultimately, this report serves as an entry point into the world of UFO sightings, offering data enthusiasts, researchers, and the general public an opportunity to unravel the mysteries of these unexplained phenomena. Its focus on data-driven analysis and visualization provides a foundation for ongoing investigations into the extraordinary and enigmatic realm of UFO encounters."
   },
   {
     "objectID": "index.html#abstract",
     "href": "index.html#abstract",
     "title": "Alien Encounters",
     "section": "",
-    "text": "Add project abstract here."
+    "text": "The present work delves into the fascinating world of UFO sightings, leveraging a comprehensive dataset featuring details on reported encounters with unidentified flying objects. Sourced from the TidyTuesday project, this dataset compiles UFO sighting reports spanning different times, locations, and attributes. The analysis focuses on uncovering intriguing insights into the patterns and characteristics of UFO sightings. The report commences by offering a concise dataset description, emphasizing its provenance and dimensions.\nThe project explores the temporal aspect of UFO sightings, tracking trends over the years. An in-depth look into diurnal patterns during particular years adds to the comprehensive examination. Ultimately, this report serves as an entry point into the world of UFO sightings, offering data enthusiasts, researchers, and the general public an opportunity to unravel the mysteries of these unexplained phenomena. Its focus on data-driven analysis and visualization provides a foundation for ongoing investigations into the extraordinary and enigmatic realm of UFO encounters."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "This project was developed by [Team Name] For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nTeam member 1: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.)."
+    "text": "This project was developed by DataInk Drinkers For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nSwati Das : Graduate Student majoring in Data Science\nTejashwini K : Graduate Student majoring in Data Science\nPartha Koundinya P : Graduate Student majoring in Data Science\nChethana T S K : Graduate Student majoring in Data Science"
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Alien Encounters",
+    "section": "Introduction",
+    "text": "Introduction\nUnidentified Flying Objects (UFOs) have long captured our collective imagination, inspiring countless stories, debates, and questions about the unknown. In this era of data-driven exploration, we have a unique opportunity to delve into the world of UFO sightings using a comprehensive dataset. The UFO sightings Dataset was taken from the TidyTuesday project. This dataset compiles a treasure trove of reports, encompassing not just descriptions of UFO encounters, but also their temporal, spatial, and qualitative dimensions. Our journey through this dataset begins with an exploration of its provenance and dimensions, setting the stage for a systematic analysis aimed at unraveling the mysteries of UFO sightings. Through this report, we embark on an intellectual adventure to reveal the temporal and spatial patterns, examine correlations, and open the door to a world where the unexplained meets data-driven discovery."
+  },
+  {
+    "objectID": "index.html#question-1",
+    "href": "index.html#question-1",
+    "title": "Alien Encounters",
+    "section": "Question 1:",
+    "text": "Question 1:\n\nIntroduction\n\n\nApproach\n\n\nAnalysis\n\n\nDiscussion"
+  },
+  {
+    "objectID": "index.html#question-2",
+    "href": "index.html#question-2",
+    "title": "Alien Encounters",
+    "section": "Question 2:",
+    "text": "Question 2:\n\nIntroduction\n\n\nApproach\n\n\nAnalysis\n\n\n\n\n\n\n\nDiscussion\nFurther, the day_part column was considered to understand the pattern of UFO sightings accross different parts of the day.\nThe following image represents the types of twilight that may be helpful in understanding the plot in a better way.\n\n\n\nTypes of twilight - source: science.howstuffworks.com\n\n\nThe bar chart depicts the number of UFO sightings reported during different parts of the day. The y-axis represents the various segments of the day, categorized into nine distinct periods viz. Night, Afternoon, Astronomical dusk, Nautical dusk, Morning, Civil dusk, Astronomical dawn, Nautical dawn, and Civil dawn. The y-axis represents the number of UFO sightings reported for each of these day-parts.\nFrom the above image, it is clear that the parts of the twilight between night-day and day-night are called dawn and dusk respectively.\n\nThe chart reveals that the highest number of UFO sightings, reaching a staggering 47,372, during the night. This is followed by a significant drop in sightings during the afternoon, with 12,353 reports. Astronomical dusk and nautical dusk witness a further decline in sightings, with 10,182 and 7,523 sightings respectively. Morning records a slightly less number of sightings compared to nautical dusk, with 7,379 reports. Civil dusk, astronomical dawn, and nautical dawn witness a consistent decrease in sightings, with 3,384, 1,688, and 1,281 reports, respectively. The lowest number of UFO sightings, a mere 648 reports, occurs during civil dawn.\n\nOverall, the chart highlights a clear pattern of UFO sightings being predominantly reported during the night, with a decrease in sightings as the day progresses towards dawn. This suggests that darkness or reduced visibility might play a role in the increased frequency of UFO sightings during nighttime."
+  },
+  {
+    "objectID": "presentation.html#heading-for-your-slide",
+    "href": "presentation.html#heading-for-your-slide",
+    "title": "Alien Encounters",
+    "section": "Heading for your slide",
+    "text": "Heading for your slide"
+  },
+  {
+    "objectID": "presentation.html#heading-for-your-slide-1",
+    "href": "presentation.html#heading-for-your-slide-1",
+    "title": "Alien Encounters",
+    "section": "Heading for your slide",
+    "text": "Heading for your slide"
+  },
+  {
+    "objectID": "presentation.html#heading-for-your-slide-2",
+    "href": "presentation.html#heading-for-your-slide-2",
+    "title": "Alien Encounters",
+    "section": "Heading for your slide",
+    "text": "Heading for your slide"
+  },
+  {
+    "objectID": "presentation.html#heading-for-your-slide-3",
+    "href": "presentation.html#heading-for-your-slide-3",
+    "title": "Alien Encounters",
+    "section": "Heading for your slide",
+    "text": "Heading for your slide"
+  },
+  {
+    "objectID": "presentation.html#heading-for-your-slide---q1-plot1",
+    "href": "presentation.html#heading-for-your-slide---q1-plot1",
+    "title": "Alien Encounters",
+    "section": "Heading for your slide - Q1 PLot1",
+    "text": "Heading for your slide - Q1 PLot1"
+  },
+  {
+    "objectID": "presentation.html#heading-for-your-slide---q1-plot2",
+    "href": "presentation.html#heading-for-your-slide---q1-plot2",
+    "title": "Alien Encounters",
+    "section": "Heading for your slide - Q1 PLot2",
+    "text": "Heading for your slide - Q1 PLot2"
+  },
+  {
+    "objectID": "presentation.html#heading-for-your-slide---q2-plot1",
+    "href": "presentation.html#heading-for-your-slide---q2-plot1",
+    "title": "Alien Encounters",
+    "section": "Heading for your slide - Q2 PLot1",
+    "text": "Heading for your slide - Q2 PLot1"
+  },
+  {
+    "objectID": "presentation.html#understanding-twilight",
+    "href": "presentation.html#understanding-twilight",
+    "title": "Alien Encounters",
+    "section": "Understanding Twilight",
+    "text": "Understanding Twilight\n\nTypes of twilight - source: science.howstuffworks.com"
+  },
+  {
+    "objectID": "presentation.html#heading-for-your-slide-----q2-plot1",
+    "href": "presentation.html#heading-for-your-slide-----q2-plot1",
+    "title": "Alien Encounters",
+    "section": "Heading for your slide - - Q2 PLot1",
+    "text": "Heading for your slide - - Q2 PLot1"
+  },
+  {
+    "objectID": "presentation.html#the-confrontation",
+    "href": "presentation.html#the-confrontation",
+    "title": "Alien Encounters",
+    "section": "The Confrontation",
+    "text": "The Confrontation"
+  },
+  {
+    "objectID": "presentation.html#thank-you",
+    "href": "presentation.html#thank-you",
+    "title": "Alien Encounters",
+    "section": "Thank you !!",
+    "text": "Thank you !!"
   }
 ]
