@@ -80,7 +80,7 @@ map
 
 ## The popular Destinations
 
-```{r q1-plot2, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.align='center'}
+```{r q1-plot2, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.align='center', fig.asp=0.4}
 
 #Installing and loading the required packages
 if(!require(pacman))
