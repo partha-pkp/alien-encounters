@@ -402,6 +402,5 @@ ggplot(new, aes(x=c2,y = reorder(c1,c2), fill = c1)) +
   
 ```
 
-## Thank you !! {auto-animate="true"}
-![](images/alien.gif) {fig-align = "left" width = "50"}
+## Thank you !!
 
