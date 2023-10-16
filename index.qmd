@@ -298,15 +298,20 @@ circular_plot <- circlepackeR(circle_pack, size = "country_ufo_sighting",
 
 title <- "Occurence of UFO Sightings across the Countries in each Continents"
 
-final_style <- paste("color:", "black", ";",
+final_style <- paste("color:", "#C0C0C0", ";",
                      "font-size", "14px", ";", 
-                     "text_aling: centre;",
+                    "text_aling: centre;",
                      "font-weight: bold;")
 
-final_plot <- prependContent(circular_plot, tags$h3(title, style = final_style))
 
+final_plot <- prependContent(circular_plot, tags$h3(title, style = final_style, class = "centered-title"))
 
-final_plot
+final_circle <- div(
+  style = "text-align: center;",
+  final_plot)
+
+final_circle
+
 ```
 
 ### Discussion

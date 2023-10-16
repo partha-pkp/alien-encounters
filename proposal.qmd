@@ -38,7 +38,7 @@ UFO sightings are associated with unexplained aerial phenomena, making them a su
 The following key variables were considered to develop the proposed analysis plan.
 
 | Variable               | Class     | Description                                                                                                            |
-|------------|------------|------------------------------------------------|
+|------------------------|-----------|------------------------------------------------------------------------------------------------------------------------|
 | reported_date_time     | datetime  | The time and date of the sighting, as it appears in the original NUFORC data.                                          |
 | reported_date_time_utc | datetime  | The time and date of the sighting, normalized to UTC.                                                                  |
 | city                   | character | The city of the sighting.                                                                                              |

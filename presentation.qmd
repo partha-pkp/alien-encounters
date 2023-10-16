@@ -84,7 +84,7 @@ map
 
 ## The popular Destinations
 
-```{r q1-plot2, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.align='center', fig.asp=0.4}
+```{r q1-plot2, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.align='center', fig.asp=1}
 
 #Installing and loading the required packages
 if(!require(pacman))
@@ -307,17 +307,14 @@ circle_pack <- as.Node(country_count, pathName = "patching")
 
 circular_plot <- circlepackeR(circle_pack, size = "country_ufo_sighting", 
                               color_min = "#CCCCFF", color_max = "#702963",
-                              width = 1000)
+                              width = 1000, height = 800)
 
 #title <- "Occurence of UFO Sightings across the Countries in each Continents"
 
-#final_style <- paste("color:", "black", ";",
-                     #"font-size", "14px", ";", 
-                    #"text_aling: centre;",
-                     #"font-weight: bold;")
-
-##final_plot <- prependContent(circular_plot, tags$h3(title, style = final_style))
-
+circular_plot <- div(
+  style = "text-align: center;",
+  circular_plot
+)
 
 circular_plot
 
