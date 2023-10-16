@@ -1,5 +1,3 @@
-
-
 ```{r}
 #| label: load-pkgs
 #| message: false
@@ -10,8 +8,8 @@ library(lubridate)
 
 ```
 
-
 ## Dataset Setup
+
 ```{r, eval=FALSE, echo=FALSE}
 
 # Libraries
@@ -32,10 +30,8 @@ ggplot(data=diamonds, aes(x=price, group=cut, fill=cut)) +
 
 ```
 
-
-
-
 ## Plots
+
 ```{r, fig.width=9,fig.height=5}
 
 # Libraries required
@@ -107,18 +103,17 @@ ggplot(new, aes(x=c2,y = reorder(c1,c2), fill = c1)) +
 
 ```
 
+# Plotting circular packing to visualize the number of UFO sighting across each regiob
 
-```{r, eval=FALSE, echo=FALSE}
-
+```{r, fig.width=8,fig.height=8, message=FALSE, warning=FALSE}
+#Installing and loading the required packages
 if(!require(pacman))
   install.packages("pacman")
 
-#install.packages('circlepackeR', dependencies = TRUE, repos='http://cran.rstudio.com/')
-devtools::install_github("jeromefroe/circlepackeR")
+install.packages('circlepackeR', dependencies = TRUE, repos='http://cran.rstudio.com/')
+
 pacman::p_load(tidyverse,
                dplyr, 
-               treemap,
-               treemapify, 
                plotly, 
                scales, 
                hrbrthemes,
@@ -127,48 +122,32 @@ pacman::p_load(tidyverse,
                htmlwidgets,
                htmltools)
 
-ufo <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/ufo_sightings.csv")
-
-ufo |>
-  glimpse()
-
+#Reading the data
 places <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/places.csv")
 
-places |>
-  glimpse()
 
+
+#Assigning the countries their respective region
 places <- places |>
   mutate(
-    continent = case_when(
-      country_code %in% c("US", "MX", "CA", "CR", "GT", "BZ", "BS", "DO", "HT",
-                          "JM", "BM", "SX", "BB", "HN", "LC", "VI", "CU", "PR", 
-                          "SV", "KN", "KY") ~ "North America",
+    region = case_when(
+      country_code %in% c("US", "MX", "CA", "CR", "GT", "BZ", "BS", "DO", "HT", "JM", "BM", "SX", "BB", "HN", "LC", "VI", "CU", "PR", "SV", "KN", "KY") ~ "North America",
       
       country_code %in% c("AU", "NZ", "PW", "SB", "GU", "FJ", "TV") ~ "Oceania",
       
-      country_code %in% c("IN", "JP", "PK", "ID", "AM", "MY", "PH", "AE", "MV", 
-                          "TH", "LK", "CN", "KZ", "IQ", "KR", "OM", "JO", "AF",
-                          "TW", "IL", "VN", "IR", "BD", "SA", "KW", "HK", "NP", 
-                          "BN", "SG", "QA", "LA", "BH", "RU", "KH", "LB", "SY", 
-                          "MM", "UZ", "KG", "TL", "TR", "AZ") ~ "Asia",
+      country_code %in% c("IN", "JP", "PK", "ID", "AM", "MY", "PH", "AE", "MV", "TH", "LK", "CN", "KZ", "IQ", "KR", "OM", "JO", "AF", "TW", "IL", "VN", "IR", "BD", "SA", "KW", "HK", "NP", "BN", "SG", "QA", "LA", "BH", "RU", "KH", "LB", "SY", "MM", "UZ", "KG", "TL", "TR", "AZ") ~ "Asia",
       
-      country_code %in% c("FR", "GB", "DE", "NO", "CH", "BG", "ES", "LT", "HR",
-                          "IE", "NL", "IS", "IT", "FI", "CZ", "EE", "HU", "SE", 
-                          "PT", "PL", "DK", "CY", "BA", "SK", "RS", "RO", "MT", 
-                          "BE", "LV", "AL", "AT", "MK", "GR", "BY", "GE", "SI", 
-                          "LU", "FO", "MD", "UA", "GI", "XK", "ME") ~ "Europe",
+      country_code %in% c("FR", "GB", "DE", "NO", "CH", "BG", "ES", "LT", "HR", "IE", "NL", "IS", "IT", "FI", "CZ", "EE", "HU", "SE", "PT", "PL", "DK", "CY", "BA", "SK", "RS", "RO", "MT", "BE", "LV", "AL", "AT", "MK", "GR", "BY", "GE", "SI", "LU", "FO", "MD", "UA", "GI", "XK", "ME") ~ "Europe",
       
-      country_code %in% c("CO", "BR", "VE", "BO", "AR", "TT", "CL", "PE", "EC", 
-                          "UY", "PA", "PY", "GY", "SR") ~ "South America",
+      country_code %in% c("CO", "BR", "VE", "BO", "AR", "TT", "CL", "PE", "EC", "UY", "PA", "PY", "GY", "SR") ~ "South America",
       
-      country_code %in% c("ZA", "MA", "ZW", "AO", "MU", "LS", "NG", "EG", "CM",
-                          "UG", "KE", "DZ", "TD", "BW", "ZM", "TZ", "ET", "TN", 
-                          "SN", "LY", "LR", "GH", "CV", "MW", "SZ") ~ "Africa",
+      country_code %in% c("ZA", "MA", "ZW", "AO", "MU", "LS", "NG", "EG", "CM", "UG", "KE", "DZ", "TD", "BW", "ZM", "TZ", "ET", "TN", "SN", "LY", "LR", "GH", "CV", "MW", "SZ") ~ "Africa",
       
       TRUE ~ "Antratica"
     )
   )
 
+#Naming the country name from country_code
 places <- places |>
   mutate(
     full_countryname = case_when(
@@ -328,49 +307,40 @@ places <- places |>
     )
   )
 
-#places  |> 
- # glimpse()
 
-continent_count <- places |>
-  group_by(continent) |>
-  summarise(countinent_ufo_sighting = n()) |>
-  ungroup() |>
-  arrange(desc(countinent_ufo_sighting))
 
-continent_count |>
-  glimpse()
-
-continent_count
-
+#Counting the occurrence of UFO sightings in across the cities in each region
 country_count <- places |>
-  group_by(country_code, continent, full_countryname) |>
+  group_by(country_code, region, full_countryname) |>
   summarise(country_ufo_sighting = n(), .groups = "drop") |>
   ungroup()
 
-#country_count |>
- # glimpse()
+country_count |>
+  glimpse()
 
-country_count$patching <- paste("world", country_count$continent, 
-                                country_count$full_countryname,
-                                country_count$country_ufo_sighting,
+#Plotting the Circular Packing
+country_count$patching <- paste("world", country_count$region, 
+                                country_count$country_code,
+                                paste(country_count$full_countryname, 
+                                      country_count$country_ufo_sighting,
+                                      sep =  " = "),
                                 sep = "/")
 
-counting <- as.Node(country_count, pathName = "patching")
+circle_pack <- as.Node(country_count, pathName = "patching")
 
-circular_plot <- circlepackeR(counting, size = "country_ufo_sighting", 
-                              color_min = "hsl(202,80%,80%)", color_max = "hsl(341,30%,40%)", 
-                              width = 3000)
+circular_plot <- circlepackeR(circle_pack, size = "country_ufo_sighting", 
+                              color_min = "#CCCCFF", color_max = "#702963",
+                              width = 1000)
 
 title <- "Occurence of UFO Sightings across the cities in Each Region"
 
-final_style <- paste("color:","rgb(93, 63, 211)" , ";",
+final_style <- paste("color:", "#5D3FD3", ";",
                      "font-size", "14px", ";", 
                      "text_aling: centre;",
-                     "font-weight bold:")
+                     "font-weight: bold;",
+                     "text-decoration: underline;")
 
 final_plot <- prependContent(circular_plot, tags$h3(title, style = final_style))
-
-
 
 
 final_plot
@@ -446,7 +416,39 @@ ggplot(subset(ufo,continent=="North America"),mapping=aes(x=year))+
 ```
 
 
+#Bubble Map
+```{r}
+library(dplyr)
+install.packages("leaflet", dependencies = TRUE, repos='http://cran.rstudio.com/')
+library(leaflet)
+
+#> Loading the Dataset 
+#> UFO_Sightings
+
+ufo <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/ufo_sightings.csv")
+
+#> Places - 
+
+places <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-06-20/places.csv")
+
+#View(ufo)
+#View(places)
 
 
+places_sub <- places |> select(state, country, country_code, latitude, longitude)
+places_sub <- places_sub %>% filter(!is.na(latitude) & !is.na(longitude))
 
+
+places_sub <- places_sub %>%group_by(state) %>%
+  mutate(State_Count = n()) %>%
+  ungroup()
+View(places_sub)
+
+map <- leaflet(data = places_sub) %>% addTiles()
+
+map <- map %>% addCircleMarkers(lat = ~latitude, lng = ~longitude, color = "#FFAC33", radius = 5, 
+                                popup = ~paste("Country_code: ", country_code,"<br>Country: ", 
+                                               country, "<br>State: ", state, "<br>count: ", State_Count))
+map
+```
 
