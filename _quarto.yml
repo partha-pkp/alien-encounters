@@ -2,11 +2,11 @@ project:
   type: website
 
 website:
-  title: DataInk Drinkers
+  title: Alien Encounters
   navbar:
     right:
       - icon: github
-        href: https://github.com/INFO526-DataViz/project-01-DataInk-Drinkers
+        href: https://github.com/partha-pkp/alien-encounters
     left:
       - text: Project
         href: index.qmd
