@@ -6,11 +6,11 @@ Unidentified Flying Objects (UFOs) have long captured our collective imagination
 
 This project was developed by *DataInk Drinkers* For [INFO 526 - Data Analysis and Visualization](https://datavizaz.org/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.
 
+-   ***Partha Koundinya P*** : Graduate Student majoring in Data Science
+
 -   *Swati Das* : Graduate Student majoring in Data Science
 
 -   *Tejashwini K* : Graduate Student majoring in Data Science
-
--   ***Partha Koundinya P*** : Graduate Student majoring in Data Science
 
 -   *Chethana T S K* : Graduate Student majoring in Data Science
 
